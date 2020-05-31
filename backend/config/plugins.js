@@ -3,7 +3,7 @@ module.exports = {
     endpoint: "/graphql",
     tracing: false,
     shadowCRUD: true,
-    playgroundAlways: false,
+    playgroundAlways: true,
     depthLimit: 7,
     amountLimit: 100,
   },
