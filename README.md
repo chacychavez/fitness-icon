@@ -3,3 +3,4 @@
 Using [Strapi](strapi.io) CMS
 
 Frontend: ReactJS
+Backend: NodeJS (Strapi)
