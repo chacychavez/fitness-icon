@@ -1,19 +1,15 @@
-.App {
-  text-align: center;
-}
+import styled from 'styled-components/macro';
 
-.App-logo {
+export const HomeContainer = styled.div`
+  text-align: center;
+`;
+
+export const HomeLogo = styled.img`
   height: 40vmin;
   pointer-events: none;
-}
+`;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+export const HomeHeader = styled.header`
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,18 +18,9 @@
   justify-content: center;
   font-size: calc(20px + 2vmin);
   color: white;
-}
+`;
 
-.App-link {
+export const HomeLink = styled.span`
   color: #61dafb;
   font-size: calc(10px + 2vmin);
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+`;
