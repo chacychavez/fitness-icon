@@ -46,3 +46,82 @@ export const HomeSearchButton = styled.a`
 export const HomeBanner = styled.img`
   margin-top: 64px;
 `;
+
+export const EventCalendarContainer = styled.div`
+  padding: 50px 175px;
+`;
+
+export const EventsContainer = styled.div`
+  margin: 40px 0;
+`;
+
+export const EventHeader = styled.header`
+  text-align: left;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 16px;
+`;
+
+export const EventItemsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+export const EventItem = styled.div`
+  width: 225px;
+`;
+
+export const EventImage = styled.img`
+  border-radius: 12px;
+`;
+
+export const EventName = styled.div`
+  font-weight: bold;
+  text-align: left;
+  margin-top: 10px;
+  font-size: 18px;
+`;
+
+export const EventDate = styled.div`
+  text-align: left;
+  margin-top: 10px;
+  font-size: 18px;
+`;
+
+export const EventViewFullButton = styled.a`
+  display: flex;
+  background-color: #000;
+  width: 225px;
+  height: 50px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`;
+
+export const SportsNewsContainer = styled.div``;
+
+export const SportsNewsBannerContainer = styled.div`
+  position: relative;
+`;
+
+export const SportsNewsBannerImage = styled.img``;
+
+export const SportsNewsBannerDescriptionContainer = styled.div`
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  width: 500px;
+  padding: 50px;
+  left: 10%;
+  bottom: 15%;
+  color: #fff;
+  text-align: left;
+
+  header {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+`;
