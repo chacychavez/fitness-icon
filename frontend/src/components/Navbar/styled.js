@@ -13,6 +13,7 @@ const textColor = theme('mode', {
 
 export const NavbarContainer = styled.nav`
   position: fixed;
+  z-index: 99;
   width: 100vw;
   height: 64px;
   display: flex;
