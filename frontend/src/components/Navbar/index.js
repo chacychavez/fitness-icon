@@ -1,2 +1,3 @@
-export * from './Navbar';
-export * from './styled';
+import Navbar from './Navbar';
+
+export default Navbar;

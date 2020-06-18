@@ -1,5 +1,8 @@
 import React from 'react';
+
 import { Link, useLocation } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+
 import {
   NavbarContainer,
   NavbarLogoContainer,
@@ -9,56 +12,57 @@ import {
   NavbarSocial,
   NavbarSearch,
 } from './styled';
-import { ThemeProvider } from 'styled-components';
 
-export const Navbar = () => {
+const Navbar = () => {
   const { pathname } = useLocation();
   return (
     <ThemeProvider theme={{ mode: pathname === '/' ? 'light' : 'dark' }}>
       <NavbarContainer>
         <NavbarLogoContainer>
-          <Link to='/'>
+          <Link to="/">
             <span>
-              <img src='https://via.placeholder.com/32' alt='Fitness icon' />
+              <img src="https://via.placeholder.com/32" alt="Fitness icon" />
             </span>
             <span>Fitness icon</span>
           </Link>{' '}
         </NavbarLogoContainer>
         <NavbarItemContainer>
           <NavbarItem>
-            <Link to='/event-calendar'>Event Calendar</Link>
+            <Link to="/event-calendar">Event Calendar</Link>
           </NavbarItem>
           <NavbarItem>
-            <Link to='/sports-directory'>Sports Directory</Link>
+            <Link to="/sports-directory">Sports Directory</Link>
           </NavbarItem>
           <NavbarItem>
-            <Link to='/articles'>Articles</Link>
+            <Link to="/articles">Articles</Link>
           </NavbarItem>
           <NavbarItem>
-            <Link to='/product-reviews'>Product Reviews</Link>
+            <Link to="/product-reviews">Product Reviews</Link>
           </NavbarItem>
           <NavbarItem>
-            <Link to='/submit-an-event'>Submit an Event</Link>
+            <Link to="/submit-an-event">Submit an Event</Link>
           </NavbarItem>
           <NavbarItem>
-            <Link to='/advertise'>Advertise!</Link>
+            <Link to="/advertise">Advertise!</Link>
           </NavbarItem>
         </NavbarItemContainer>
         <NavbarSocialSearchContainer>
           <NavbarSocial>
-            <img src='https://via.placeholder.com/24' alt='social' />
+            <img src="https://via.placeholder.com/24" alt="social" />
           </NavbarSocial>
           <NavbarSocial>
-            <img src='https://via.placeholder.com/24' alt='social' />
+            <img src="https://via.placeholder.com/24" alt="social" />
           </NavbarSocial>
           <NavbarSocial>
-            <img src='https://via.placeholder.com/24' alt='social' />
+            <img src="https://via.placeholder.com/24" alt="social" />
           </NavbarSocial>
           <NavbarSearch>
-            <img src='https://via.placeholder.com/24' alt='search' />
+            <img src="https://via.placeholder.com/24" alt="search" />
           </NavbarSearch>
         </NavbarSocialSearchContainer>
       </NavbarContainer>
     </ThemeProvider>
   );
 };
+
+export default Navbar;

@@ -1,2 +1,3 @@
-export * from './Advertise';
-export * from './styled';
+import Advertise from './Advertise';
+
+export default Advertise;

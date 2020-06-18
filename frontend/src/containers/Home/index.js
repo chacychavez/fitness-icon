@@ -1,2 +1,3 @@
-export * from './Home';
-export * from './styled';
+import Home from './Home';
+
+export default Home;

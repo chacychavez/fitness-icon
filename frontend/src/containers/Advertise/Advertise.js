@@ -1,10 +1,11 @@
 import React from 'react';
+
 import { AdvertiseContainer, AdvertiseHeader } from './styled';
 
-export const Advertise = () => {
-  return (
-    <AdvertiseContainer>
-      <AdvertiseHeader>Advertise!</AdvertiseHeader>
-    </AdvertiseContainer>
-  );
-};
+const Advertise = () => (
+  <AdvertiseContainer>
+    <AdvertiseHeader>Advertise!</AdvertiseHeader>
+  </AdvertiseContainer>
+);
+
+export default Advertise;

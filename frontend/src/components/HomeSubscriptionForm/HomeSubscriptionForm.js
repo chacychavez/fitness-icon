@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   SubscriptionContainer,
   SubscriptionForm,
@@ -7,15 +8,15 @@ import {
   SubscriptionButton,
 } from './styled';
 
-export const HomeSubscriptionForm = () => {
-  return (
-    <SubscriptionContainer>
-      <SubscriptionForm>
-        <SubscriptionTitle>Subscribe to our newsletter</SubscriptionTitle>
-        <SubscriptionInput placeholder='Name' />
-        <SubscriptionInput placeholder='Email' />
-        <SubscriptionButton> Yes, please!</SubscriptionButton>
-      </SubscriptionForm>
-    </SubscriptionContainer>
-  );
-};
+const HomeSubscriptionForm = () => (
+  <SubscriptionContainer>
+    <SubscriptionForm>
+      <SubscriptionTitle>Subscribe to our newsletter</SubscriptionTitle>
+      <SubscriptionInput placeholder="Name" />
+      <SubscriptionInput placeholder="Email" />
+      <SubscriptionButton> Yes, please!</SubscriptionButton>
+    </SubscriptionForm>
+  </SubscriptionContainer>
+);
+
+export default HomeSubscriptionForm;

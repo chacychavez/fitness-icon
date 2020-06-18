@@ -1,4 +1,6 @@
 import React from 'react';
+
+import HomeHeader from '../HomeHeader';
 import {
   ArticlesContainer,
   Articles,
@@ -6,8 +8,6 @@ import {
   ArticleImage,
   ArticleTitle,
 } from './styled';
-
-import { HomeHeader } from '../HomeHeader';
 
 const articles = [
   { title: 'Inside Ground Zero of the Pandemic' },
@@ -20,18 +20,18 @@ const articles = [
   { title: '6 new, hassle-free ways to see the doctor' },
 ];
 
-export const HomeArticles = () => {
-  return (
-    <ArticlesContainer>
-      <HomeHeader>Fitness Articles</HomeHeader>
-      <Articles>
-        {articles.map((article) => (
-          <Article key={article.title}>
-            <ArticleImage src='https://via.placeholder.com/300x300' />
-            <ArticleTitle>{article.title}</ArticleTitle>
-          </Article>
-        ))}
-      </Articles>
-    </ArticlesContainer>
-  );
-};
+const HomeArticles = () => (
+  <ArticlesContainer>
+    <HomeHeader>Fitness Articles</HomeHeader>
+    <Articles>
+      {articles.map((article) => (
+        <Article key={article.title}>
+          <ArticleImage src="https://via.placeholder.com/300x300" />
+          <ArticleTitle>{article.title}</ArticleTitle>
+        </Article>
+      ))}
+    </Articles>
+  </ArticlesContainer>
+);
+
+export default HomeArticles;

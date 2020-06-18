@@ -1,2 +1,3 @@
-export * from './HomeEventCalendar';
-export * from './styled';
+import HomeEventCalendar from './HomeEventCalendar';
+
+export default HomeEventCalendar;

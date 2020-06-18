@@ -1,2 +1,3 @@
-export * from './HomeArticles.js';
-export * from './styled';
+import HomeArticles from './HomeArticles';
+
+export default HomeArticles;

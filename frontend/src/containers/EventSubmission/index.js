@@ -1,2 +1,3 @@
-export * from './EventSubmission';
-export * from './styled';
+import EventSubmission from './EventSubmission';
+
+export default EventSubmission;

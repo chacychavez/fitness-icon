@@ -1,2 +1,3 @@
-export * from './HomeSportsNews';
-export * from './styled';
+import HomeSportsNews from './HomeSportsNews';
+
+export default HomeSportsNews;

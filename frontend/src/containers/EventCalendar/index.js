@@ -1,2 +1,3 @@
-export * from './EventCalendar';
-export * from './styled';
+import EventCalendar from './EventCalendar';
+
+export default EventCalendar;

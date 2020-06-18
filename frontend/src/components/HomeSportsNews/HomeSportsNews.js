@@ -1,4 +1,6 @@
 import React from 'react';
+
+import HomeHeader from '../HomeHeader';
 import {
   SportsNewsContainer,
   SportsNewsBannerContainer,
@@ -17,8 +19,6 @@ import {
   SportsAdContainer,
   SportsAdImage,
 } from './styled';
-
-import { HomeHeader } from '../HomeHeader';
 
 const sportsArticles = [
   {
@@ -57,44 +57,44 @@ const sportsArticles = [
   },
 ];
 
-export const HomeSportsNews = () => {
-  return (
-    <SportsNewsContainer>
-      <HomeHeader>Sports news</HomeHeader>
-      <SportsNewsBannerContainer>
-        <SportsNewsBannerImage src='https://via.placeholder.com/1680x512' />
-        <SportsNewsBannerDescriptionContainer>
-          <header>Why are Obstacle-Course Races So Popular?</header>
-          <span>
-            As marathon participation declines, more people are signing up for
-            extreme events such as Spartan and Tough Mudder.
-          </span>
-        </SportsNewsBannerDescriptionContainer>
-      </SportsNewsBannerContainer>
-      <SportsArticlesContainer>
-        <SportsArticles>
-          {sportsArticles.map((sportsArticle) => (
-            <SportsArticle key={sportsArticle.title}>
-              <SportsArticleImage src='https://via.placeholder.com/300x200' />
-              <SportsArticleContentContainer>
-                <SportsArticleTitle>{sportsArticle.title}</SportsArticleTitle>
-                <SportsArticleInfo>
-                  <SportsArticleAuthor>
-                    By {sportsArticle.author} in{' '}
-                  </SportsArticleAuthor>
-                  <SportsArticleSport>{sportsArticle.sport}</SportsArticleSport>
-                </SportsArticleInfo>
-                <SportsArticleContent>
-                  {sportsArticle.content}
-                </SportsArticleContent>
-              </SportsArticleContentContainer>
-            </SportsArticle>
-          ))}
-        </SportsArticles>
-        <SportsAdContainer>
-          <SportsAdImage src='https://via.placeholder.com/400x1000' />
-        </SportsAdContainer>
-      </SportsArticlesContainer>
-    </SportsNewsContainer>
-  );
-};
+const HomeSportsNews = () => (
+  <SportsNewsContainer>
+    <HomeHeader>Sports news</HomeHeader>
+    <SportsNewsBannerContainer>
+      <SportsNewsBannerImage src="https://via.placeholder.com/1680x512" />
+      <SportsNewsBannerDescriptionContainer>
+        <header>Why are Obstacle-Course Races So Popular?</header>
+        <span>
+          As marathon participation declines, more people are signing up for
+          extreme events such as Spartan and Tough Mudder.
+        </span>
+      </SportsNewsBannerDescriptionContainer>
+    </SportsNewsBannerContainer>
+    <SportsArticlesContainer>
+      <SportsArticles>
+        {sportsArticles.map((sportsArticle) => (
+          <SportsArticle key={sportsArticle.title}>
+            <SportsArticleImage src="https://via.placeholder.com/300x200" />
+            <SportsArticleContentContainer>
+              <SportsArticleTitle>{sportsArticle.title}</SportsArticleTitle>
+              <SportsArticleInfo>
+                <SportsArticleAuthor>
+                  By {sportsArticle.author} in{' '}
+                </SportsArticleAuthor>
+                <SportsArticleSport>{sportsArticle.sport}</SportsArticleSport>
+              </SportsArticleInfo>
+              <SportsArticleContent>
+                {sportsArticle.content}
+              </SportsArticleContent>
+            </SportsArticleContentContainer>
+          </SportsArticle>
+        ))}
+      </SportsArticles>
+      <SportsAdContainer>
+        <SportsAdImage src="https://via.placeholder.com/400x1000" />
+      </SportsAdContainer>
+    </SportsArticlesContainer>
+  </SportsNewsContainer>
+);
+
+export default HomeSportsNews;

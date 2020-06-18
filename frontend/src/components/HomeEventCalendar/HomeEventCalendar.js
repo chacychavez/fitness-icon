@@ -1,4 +1,6 @@
 import React from 'react';
+
+import HomeHeader from '../HomeHeader';
 import {
   EventCalendarContainer,
   EventsContainer,
@@ -10,8 +12,6 @@ import {
   EventDate,
   EventViewFullButton,
 } from './styled';
-
-import { HomeHeader } from '../HomeHeader';
 
 const sportEvents = [
   {
@@ -91,28 +91,28 @@ const sportEvents = [
   },
 ];
 
-export const HomeEventCalendar = () => {
-  return (
-    <EventCalendarContainer>
-      <HomeHeader>Upcoming events</HomeHeader>
-      <span>Quezon City, Philippines</span>
-      <span> - </span>
-      <span>Select dates</span>
-      {sportEvents.map((sportEvent) => (
-        <EventsContainer key={sportEvent.sport}>
-          <EventHeader>{sportEvent.sport}</EventHeader>
-          <EventItemsContainer>
-            {sportEvent.events.map((event) => (
-              <EventItem key={event.name}>
-                <EventImage src='https://via.placeholder.com/225x175' />
-                <EventName>{event.name}</EventName>
-                <EventDate>{event.date}</EventDate>
-              </EventItem>
-            ))}
-          </EventItemsContainer>
-        </EventsContainer>
-      ))}
-      <EventViewFullButton>View Full Calendar</EventViewFullButton>
-    </EventCalendarContainer>
-  );
-};
+const HomeEventCalendar = () => (
+  <EventCalendarContainer>
+    <HomeHeader>Upcoming events</HomeHeader>
+    <span>Quezon City, Philippines</span>
+    <span> - </span>
+    <span>Select dates</span>
+    {sportEvents.map((sportEvent) => (
+      <EventsContainer key={sportEvent.sport}>
+        <EventHeader>{sportEvent.sport}</EventHeader>
+        <EventItemsContainer>
+          {sportEvent.events.map((event) => (
+            <EventItem key={event.name}>
+              <EventImage src="https://via.placeholder.com/225x175" />
+              <EventName>{event.name}</EventName>
+              <EventDate>{event.date}</EventDate>
+            </EventItem>
+          ))}
+        </EventItemsContainer>
+      </EventsContainer>
+    ))}
+    <EventViewFullButton>View Full Calendar</EventViewFullButton>
+  </EventCalendarContainer>
+);
+
+export default HomeEventCalendar;

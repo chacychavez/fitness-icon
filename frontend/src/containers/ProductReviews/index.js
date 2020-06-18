@@ -1,2 +1,3 @@
-export * from './ProductReviews';
-export * from './styled';
+import ProductReviews from './ProductReviews';
+
+export default ProductReviews;

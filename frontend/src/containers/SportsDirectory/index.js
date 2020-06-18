@@ -1,2 +1,3 @@
-export * from './SportsDirectory';
-export * from './styled';
+import SportsDirectory from './SportsDirectory';
+
+export default SportsDirectory;

@@ -1,2 +1,3 @@
-export * from './HomeSubscriptionForm';
-export * from './styled';
+import HomeSubscriptionForm from './HomeSubscriptionForm';
+
+export default HomeSubscriptionForm;

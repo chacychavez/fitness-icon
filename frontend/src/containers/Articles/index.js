@@ -1,2 +1,3 @@
-export * from './Articles';
-export * from './styled';
+import Articles from './Articles';
+
+export default Articles;

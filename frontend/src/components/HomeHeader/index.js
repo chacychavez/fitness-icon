@@ -1,1 +1,3 @@
-export * from './styled';
+import HomeHeader from './styled';
+
+export default HomeHeader;
