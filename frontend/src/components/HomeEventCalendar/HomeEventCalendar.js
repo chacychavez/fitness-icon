@@ -1,5 +1,7 @@
 import React from 'react';
 
+import dropdown from '../../assets/images/dropdown.svg';
+import mapPin from '../../assets/images/map-pin.svg';
 import HomeHeader from '../HomeHeader';
 import {
   EventCalendarContainer,
@@ -15,9 +17,6 @@ import {
   EventDate,
   EventViewFullButton,
 } from './styled';
-
-import dropdown from '../../assets/images/dropdown.svg';
-import mapPin from '../../assets/images/map-pin.svg';
 
 const sportEvents = [
   {
@@ -111,7 +110,7 @@ const HomeEventCalendar = () => (
     {sportEvents.map((sportEvent) => (
       <EventsContainer key={sportEvent.sport}>
         <EventHeader>
-          <img src={mapPin} width={24} height={24} />
+          <img src={mapPin} width={24} height={24} alt="sport" />
           {sportEvent.sport}
         </EventHeader>
         <EventItemsContainer>
