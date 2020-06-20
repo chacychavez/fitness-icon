@@ -6,18 +6,26 @@ export const HomeContainer = styled.div`
 `;
 
 export const HomeSearchContainer = styled.div`
+  margin-top: 100px;
+`;
+
+export const HomeSearch = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 export const HomeSearchInput = styled.input`
-  height: 48px;
-  width: 500px;
-  padding: 0 16px;
+  height: 50px;
+  width: 450px;
+  padding: 0 18px;
   border-radius: 48px 0 0 48px;
-  border-color: #000;
+  border: 2px solid rgba(196, 196, 196, 0.7);
   font-size: 20px;
+  font-family: 'Exo';
+  font-weight: 600;
+  color: #a2a2a2;
+  background-color: #fafbfb;
 
   &:focus {
     outline: none;
@@ -28,14 +36,21 @@ export const HomeSearchButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 52px;
-  width: 80px;
+  height: 54px;
+  width: 87px;
   background-color: #000;
   color: #fff;
   cursor: pointer;
   border-radius: 0 48px 48px 0;
+  font-family: 'Montserrat' sans-serif;
+  font-weight: bold;
+  font-size: 20px;
 `;
 
-export const HomeBanner = styled.img`
-  margin-top: 64px;
+export const HomeBanner = styled.div`
+  margin-top: 70px;
+  width: 100%;
+  height: 512px;
+  /* Use props.src */
+  background: #c4c4c4;
 `;

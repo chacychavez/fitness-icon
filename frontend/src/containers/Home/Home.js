@@ -8,6 +8,7 @@ import HomeSubscriptionForm from '../../components/HomeSubscriptionForm';
 import {
   HomeContainer,
   HomeSearchContainer,
+  HomeSearch,
   HomeSearchInput,
   HomeSearchButton,
   HomeBanner,
@@ -15,11 +16,14 @@ import {
 
 const Home = () => (
   <HomeContainer>
-    <HomeHeader>Find your next challenge.</HomeHeader>
     <HomeSearchContainer>
-      <HomeSearchInput />
-      <HomeSearchButton>Go</HomeSearchButton>
+      <HomeHeader>Find your next challenge.</HomeHeader>
+      <HomeSearch>
+        <HomeSearchInput />
+        <HomeSearchButton>Go!</HomeSearchButton>
+      </HomeSearch>
     </HomeSearchContainer>
+    {/* TODO: Improve how to display banner image */}
     <HomeBanner src="https://via.placeholder.com/1680x512" />
     <HomeEventCalendar />
     <HomeSportsNews />
