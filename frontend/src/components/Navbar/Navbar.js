@@ -3,9 +3,16 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
+import fbSquare from '../../assets/images/fb-square.svg';
+import igSquare from '../../assets/images/ig-square.svg';
+import logo from '../../assets/images/logo.svg';
+import searchGray from '../../assets/images/search-icon-gray.svg';
+import search from '../../assets/images/search-icon.svg';
+import twitterSquare from '../../assets/images/twitter-square.svg';
 import {
   NavbarContainer,
   NavbarLogoContainer,
+  NavbarLogoText,
   NavbarItemContainer,
   NavbarItem,
   NavbarSocialSearchContainer,
@@ -20,10 +27,8 @@ const Navbar = () => {
       <NavbarContainer>
         <NavbarLogoContainer>
           <Link to="/">
-            <span>
-              <img src="https://via.placeholder.com/32" alt="Fitness icon" />
-            </span>
-            <span>Fitness icon</span>
+            <img src={logo} alt="Fitness icon" width={30} height={30} />
+            <NavbarLogoText>Fitness icon</NavbarLogoText>
           </Link>{' '}
         </NavbarLogoContainer>
         <NavbarItemContainer>
@@ -48,16 +53,21 @@ const Navbar = () => {
         </NavbarItemContainer>
         <NavbarSocialSearchContainer>
           <NavbarSocial>
-            <img src="https://via.placeholder.com/24" alt="social" />
+            <img src={igSquare} alt="social" width={24} height={24} />
           </NavbarSocial>
           <NavbarSocial>
-            <img src="https://via.placeholder.com/24" alt="social" />
+            <img src={fbSquare} alt="social" width={24} height={24} />
           </NavbarSocial>
           <NavbarSocial>
-            <img src="https://via.placeholder.com/24" alt="social" />
+            <img src={twitterSquare} alt="social" width={24} height={24} />
           </NavbarSocial>
           <NavbarSearch>
-            <img src="https://via.placeholder.com/24" alt="search" />
+            <img
+              src={pathname === '/' ? searchGray : search}
+              alt="search"
+              width={24}
+              height={24}
+            />
           </NavbarSearch>
         </NavbarSocialSearchContainer>
       </NavbarContainer>

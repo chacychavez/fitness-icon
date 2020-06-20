@@ -6,8 +6,13 @@ const backgroundColor = theme('mode', {
   dark: '#000',
 });
 
-const textColor = theme('mode', {
+const logoTextColor = theme('mode', {
   light: '#000',
+  dark: '#fff',
+});
+
+const textColor = theme('mode', {
+  light: '#6d7577',
   dark: '#fff',
 });
 
@@ -23,22 +28,22 @@ export const NavbarContainer = styled.nav`
 `;
 
 export const NavbarLogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-
   a {
+    margin-left: 16px;
     display: flex;
     align-items: center;
     height: 64px;
     text-decoration: none;
   }
+`;
 
-  span {
-    margin-left: 8px;
-    font-size: 24px;
-    font-weight: bold;
-    color: ${textColor};
-  }
+export const NavbarLogoText = styled.span`
+  font-family: 'Exo', sans-serif;
+  font-weight: 700;
+  margin-left: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: ${logoTextColor};
 `;
 
 export const NavbarItemContainer = styled.ul`
@@ -47,13 +52,15 @@ export const NavbarItemContainer = styled.ul`
 
 export const NavbarItem = styled.li`
   list-style-type: none;
-  margin: auto 24px;
+  margin: auto 26px;
 
   a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
     display: flex;
     text-decoration: none;
     color: ${textColor};
-    font-weight: bold;
+    font-weight: 600;
     height: 64px;
     align-items: center;
   }
@@ -61,14 +68,15 @@ export const NavbarItem = styled.li`
 
 export const NavbarSocialSearchContainer = styled.ul`
   display: flex;
+  margin-right: 16px;
 `;
 
 export const NavbarSocial = styled.li`
   list-style-type: none;
-  margin: 0 8px;
+  margin: 0 6px;
 `;
 
 export const NavbarSearch = styled.li`
   list-style-type: none;
-  margin: 0 8px;
+  margin: 0 4px;
 `;
