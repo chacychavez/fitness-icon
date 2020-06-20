@@ -13,6 +13,8 @@ import Home from '../Home';
 import ProductReviews from '../ProductReviews';
 import SportsDirectory from '../SportsDirectory';
 
+import '../../assets/fonts/fonts.css';
+
 const App = () => (
   <Router>
     <ApolloProvider client={client}>
