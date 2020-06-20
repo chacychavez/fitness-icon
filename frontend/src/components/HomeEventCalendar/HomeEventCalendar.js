@@ -5,6 +5,9 @@ import {
   EventCalendarContainer,
   EventsContainer,
   EventHeader,
+  EventCalendarLocationDateContainer,
+  EventCalendarLocation,
+  EventCalendarDate,
   EventItemsContainer,
   EventItem,
   EventImage,
@@ -12,6 +15,9 @@ import {
   EventDate,
   EventViewFullButton,
 } from './styled';
+
+import dropdown from '../../assets/images/dropdown.svg';
+import mapPin from '../../assets/images/map-pin.svg';
 
 const sportEvents = [
   {
@@ -94,12 +100,20 @@ const sportEvents = [
 const HomeEventCalendar = () => (
   <EventCalendarContainer>
     <HomeHeader>Upcoming events</HomeHeader>
-    <span>Quezon City, Philippines</span>
-    <span> - </span>
-    <span>Select dates</span>
+    <EventCalendarLocationDateContainer>
+      <img src={mapPin} alt="Map Pin" width={16} height={16} />
+      <EventCalendarLocation>Quezon City, Philippines</EventCalendarLocation>
+    </EventCalendarLocationDateContainer>
+    <EventCalendarLocationDateContainer>
+      <EventCalendarDate>Select dates</EventCalendarDate>
+      <img src={dropdown} alt="Map Pin" width={16} height={16} />
+    </EventCalendarLocationDateContainer>
     {sportEvents.map((sportEvent) => (
       <EventsContainer key={sportEvent.sport}>
-        <EventHeader>{sportEvent.sport}</EventHeader>
+        <EventHeader>
+          <img src={mapPin} width={24} height={24} />
+          {sportEvent.sport}
+        </EventHeader>
         <EventItemsContainer>
           {sportEvent.events.map((event) => (
             <EventItem key={event.name}>
@@ -111,7 +125,7 @@ const HomeEventCalendar = () => (
         </EventItemsContainer>
       </EventsContainer>
     ))}
-    <EventViewFullButton>View Full Calendar</EventViewFullButton>
+    <EventViewFullButton>View full calendar</EventViewFullButton>
   </EventCalendarContainer>
 );
 

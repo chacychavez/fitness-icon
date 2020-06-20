@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 export const HomeContainer = styled.div`
-  padding: 64px 0;
+  padding: 32px 0;
   text-align: center;
 `;
 
