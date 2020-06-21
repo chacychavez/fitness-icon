@@ -26,7 +26,7 @@ const HomeArticles = () => (
     <Articles>
       {articles.map((article) => (
         <Article key={article.title}>
-          <ArticleImage src="https://via.placeholder.com/300x300" />
+          <ArticleImage src="https://via.placeholder.com/296x296" />
           <ArticleTitle>{article.title}</ArticleTitle>
         </Article>
       ))}
