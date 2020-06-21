@@ -6,6 +6,7 @@ import {
   SportsNewsBannerContainer,
   SportsNewsBanner,
   SportsNewsBannerDescriptionContainer,
+  SportsArticlesMainContainer,
   SportsArticlesContainer,
   SportsArticles,
   SportsArticle,
@@ -71,30 +72,32 @@ const HomeSportsNews = () => (
         </span>
       </SportsNewsBannerDescriptionContainer>
     </SportsNewsBannerContainer>
-    <SportsArticlesContainer>
-      <SportsArticles>
-        {sportsArticles.map((sportsArticle) => (
-          <SportsArticle key={sportsArticle.title}>
-            <SportsArticleImage src="https://via.placeholder.com/300x200" />
-            <SportsArticleContentContainer>
-              <SportsArticleTitle>{sportsArticle.title}</SportsArticleTitle>
-              <SportsArticleInfo>
-                <SportsArticleAuthor>
-                  <span>By</span> {sportsArticle.author} <span>in</span>{' '}
-                </SportsArticleAuthor>
-                <SportsArticleSport>{sportsArticle.sport}</SportsArticleSport>
-              </SportsArticleInfo>
-              <SportsArticleContent>
-                {sportsArticle.content}
-              </SportsArticleContent>
-            </SportsArticleContentContainer>
-          </SportsArticle>
-        ))}
-      </SportsArticles>
-      <SportsAdContainer>
-        <SportsAdImage src="https://via.placeholder.com/400x1000" />
-      </SportsAdContainer>
-    </SportsArticlesContainer>
+    <SportsArticlesMainContainer>
+      <SportsArticlesContainer>
+        <SportsArticles>
+          {sportsArticles.map((sportsArticle) => (
+            <SportsArticle key={sportsArticle.title}>
+              <SportsArticleImage src="https://via.placeholder.com/300x200" />
+              <SportsArticleContentContainer>
+                <SportsArticleTitle>{sportsArticle.title}</SportsArticleTitle>
+                <SportsArticleInfo>
+                  <SportsArticleAuthor>
+                    <span>By</span> {sportsArticle.author} <span>in</span>{' '}
+                  </SportsArticleAuthor>
+                  <SportsArticleSport>{sportsArticle.sport}</SportsArticleSport>
+                </SportsArticleInfo>
+                <SportsArticleContent>
+                  {sportsArticle.content}
+                </SportsArticleContent>
+              </SportsArticleContentContainer>
+            </SportsArticle>
+          ))}
+        </SportsArticles>
+        <SportsAdContainer>
+          <SportsAdImage src="https://via.placeholder.com/400x1000" />
+        </SportsAdContainer>
+      </SportsArticlesContainer>
+    </SportsArticlesMainContainer>
   </SportsNewsContainer>
 );
 

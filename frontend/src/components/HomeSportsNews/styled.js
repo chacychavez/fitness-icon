@@ -2,7 +2,6 @@ import styled from 'styled-components/macro';
 
 export const SportsNewsContainer = styled.div`
   margin-top: 136px;
-  padding: 0 120px;
 `;
 
 export const SportsNewsBannerContainer = styled.div`
@@ -42,6 +41,10 @@ export const SportsNewsBannerDescriptionContainer = styled.div`
     font-size: 16px;
     line-height: 24px;
   }
+`;
+
+export const SportsArticlesMainContainer = styled.div`
+  padding: 0 120px;
 `;
 
 export const SportsArticlesContainer = styled.div`
