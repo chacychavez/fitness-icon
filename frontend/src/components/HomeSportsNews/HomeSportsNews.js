@@ -4,7 +4,7 @@ import HomeHeader from '../HomeHeader';
 import {
   SportsNewsContainer,
   SportsNewsBannerContainer,
-  SportsNewsBannerImage,
+  SportsNewsBanner,
   SportsNewsBannerDescriptionContainer,
   SportsArticlesContainer,
   SportsArticles,
@@ -26,34 +26,34 @@ const sportsArticles = [
     author: 'Hilary Potkewitz',
     sport: 'Obstacle Course Racing',
     content:
-      "As some events' popularity cools, organizers are trying to draw more kids and families",
+      "As some events' popularity cools, organizers are trying to draw more kids and families.",
   },
   {
     title: 'Running as Told by "The Last Dance"',
     author: 'Jordan Smith',
     sport: 'Running',
-    content: 'Turns out Air Jordan is more relatable than you thought',
+    content: 'Turns out Air Jordan is more relatable than you thought.',
   },
   {
     title: 'Runner Recovers from near-fatal case of COVID-19',
     author: 'Jordan Smith',
     sport: 'Fitness',
     content:
-      'What started as a mild fever turned into a harrowing experience for Joshua Fiske',
+      'What started as a mild fever turned into a harrowing experience for Joshua Fiske.',
   },
   {
     title: 'Diamond League Announces Revised Race Calendar',
     author: 'Hilary Potkewitz',
     sport: 'Running',
     content:
-      'A limited series of international meets is slated to begin in late August',
+      'A limited series of international meets is slated to begin in late August.',
   },
   {
     title: 'How to Dress for Warm-Weather Runs',
     author: 'Hilary Potkewitz',
     sport: 'Boxing',
     content:
-      'Master spring and summer running with this guide to dressing for temeratures above 50',
+      'Master spring and summer running with this guide to dressing for temeratures above 50.',
   },
 ];
 
@@ -61,7 +61,8 @@ const HomeSportsNews = () => (
   <SportsNewsContainer>
     <HomeHeader>Sports news</HomeHeader>
     <SportsNewsBannerContainer>
-      <SportsNewsBannerImage src="https://via.placeholder.com/1680x512" />
+      {/* TODO: Improve how to display banner image */}
+      <SportsNewsBanner src="https://via.placeholder.com/1680x512" />
       <SportsNewsBannerDescriptionContainer>
         <header>Why are Obstacle-Course Races So Popular?</header>
         <span>
@@ -79,7 +80,7 @@ const HomeSportsNews = () => (
               <SportsArticleTitle>{sportsArticle.title}</SportsArticleTitle>
               <SportsArticleInfo>
                 <SportsArticleAuthor>
-                  By {sportsArticle.author} in{' '}
+                  <span>By</span> {sportsArticle.author} <span>in</span>{' '}
                 </SportsArticleAuthor>
                 <SportsArticleSport>{sportsArticle.sport}</SportsArticleSport>
               </SportsArticleInfo>
