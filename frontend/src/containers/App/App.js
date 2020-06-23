@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { ApolloProvider } from 'react-apollo';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useLocation,
+} from 'react-router-dom';
 
 import Navbar from '../../components/Navbar';
 import client from '../../utils/apolloClient';
@@ -16,9 +21,20 @@ import SportsDirectory from '../SportsDirectory';
 
 import '../../assets/fonts/fonts.css';
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 const App = () => (
   <Router>
     <ApolloProvider client={client}>
+      <ScrollToTop />
       <Navbar />
       <Switch>
         <Route path="/">
@@ -26,7 +42,7 @@ const App = () => (
           <Route exact path="/event-calendar" component={EventCalendar} />
           <Route exact path="/sports-directory" component={SportsDirectory} />
           <Route path="/articles">
-          <Route exact path="/articles" component={Articles} />
+            <Route exact path="/articles" component={Articles} />
             <Route exact path="/articles/:id" component={Article} />
           </Route>
           <Route exact path="/product-reviews" component={ProductReviews} />
