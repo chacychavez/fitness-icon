@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
 
+import { Link } from 'react-router-dom';
+
 export const SportsNewsContainer = styled.div`
   margin-top: 136px;
 `;
@@ -79,10 +81,12 @@ export const SportsArticleContentContainer = styled.div`
   margin-left: 40px;
 `;
 
-export const SportsArticleTitle = styled.header`
+export const SportsArticleTitle = styled(Link)`
   font-size: 28px;
   font-family: 'Exo';
   font-weight: 800;
+  text-decoration: none;
+  color: #000;
 `;
 
 export const SportsArticleInfo = styled.div`

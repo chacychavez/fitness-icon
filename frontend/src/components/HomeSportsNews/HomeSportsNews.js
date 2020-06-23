@@ -79,7 +79,16 @@ const HomeSportsNews = () => (
             <SportsArticle key={sportsArticle.title}>
               <SportsArticleImage src="https://via.placeholder.com/300x200" />
               <SportsArticleContentContainer>
-                <SportsArticleTitle>{sportsArticle.title}</SportsArticleTitle>
+                <SportsArticleTitle
+                  to={`/articles/${sportsArticle.title
+                    .match(
+                      /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g,
+                    )
+                    .map((x) => x.toLowerCase())
+                    .join('-')}`}
+                >
+                  {sportsArticle.title}
+                </SportsArticleTitle>
                 <SportsArticleInfo>
                   <SportsArticleAuthor>
                     <span>By</span> {sportsArticle.author} <span>in</span>{' '}

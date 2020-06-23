@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import client from '../../utils/apolloClient';
 import Advertise from '../Advertise';
+import Article from '../Article';
 import Articles from '../Articles';
 import EventCalendar from '../EventCalendar';
 import EventSubmission from '../EventSubmission';
@@ -24,7 +25,10 @@ const App = () => (
           <Route exact path="/" component={Home} />
           <Route exact path="/event-calendar" component={EventCalendar} />
           <Route exact path="/sports-directory" component={SportsDirectory} />
+          <Route path="/articles">
           <Route exact path="/articles" component={Articles} />
+            <Route exact path="/articles/:id" component={Article} />
+          </Route>
           <Route exact path="/product-reviews" component={ProductReviews} />
           <Route exact path="/submit-an-event" component={EventSubmission} />
           <Route exact path="/advertise" component={Advertise} />
