@@ -1,12 +1,11 @@
 import React from 'react';
 
-import fbSquare from '../../assets/images/fb-square.svg';
 import emailSquare from '../../assets/images/email-square.svg';
-import twitterSquare from '../../assets/images/twitter-square.svg';
+import fbSquare from '../../assets/images/fb-square.svg';
 import fb from '../../assets/images/fb.svg';
 import ig from '../../assets/images/ig.svg';
+import twitterSquare from '../../assets/images/twitter-square.svg';
 import twitter from '../../assets/images/twitter.svg';
-
 import {
   ArticleContainer,
   ArticleBanner,

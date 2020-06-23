@@ -1,6 +1,5 @@
-import styled from 'styled-components/macro';
-
 import { Link } from 'react-router-dom';
+import styled from 'styled-components/macro';
 
 export const SportsNewsContainer = styled.div`
   margin-top: 136px;
