@@ -6,7 +6,10 @@ export const HomeContainer = styled.div`
 `;
 
 export const HomeSearchContainer = styled.div`
+  position: relative;
   margin-top: 100px;
+  display: grid;
+  justify-content: center;
 `;
 
 export const HomeSearch = styled.div`
