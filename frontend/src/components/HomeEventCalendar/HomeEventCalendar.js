@@ -117,7 +117,16 @@ const HomeEventCalendar = () => (
           {sportEvent.events.map((event) => (
             <EventItem key={event.name}>
               <EventImage src="https://via.placeholder.com/225x175" />
-              <EventName>{event.name}</EventName>
+              <EventName
+                to={`/event-calendar/${event.name
+                  .match(
+                    /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g,
+                  )
+                  .map((x) => x.toLowerCase())
+                  .join('-')}`}
+              >
+                {event.name}
+              </EventName>
               <EventDate>{event.date}</EventDate>
             </EventItem>
           ))}

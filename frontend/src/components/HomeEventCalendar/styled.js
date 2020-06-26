@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
 
 export const EventCalendarContainer = styled.div`
@@ -61,13 +62,16 @@ export const EventImage = styled.img`
   border-radius: 12px;
 `;
 
-export const EventName = styled.div`
+export const EventName = styled(Link)`
+  display: block;
   font-family: 'Exo';
   font-weight: bold;
   text-align: left;
-  margin-top: 10px;
+  margin-top: 14px;
   font-size: 18px;
   line-height: 24px;
+  text-decoration-line: none;
+  color: #000;
 `;
 
 export const EventDate = styled.div`
