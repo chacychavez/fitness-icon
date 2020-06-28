@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import PropTypes from 'prop-types';
-
-import dropdownIcon from '../../assets/images/dropdown.svg';
+import EventDetails from '../../components/EventDetails';
 import {
   EventMainContainer,
   EventBanner,
@@ -55,12 +53,6 @@ import {
   EventOnlineRegistrationHeader,
   EventOnlineRegistrationDetails,
   EventOnlineRegistrationButton,
-  EventDetails,
-  EventDetailsHeader,
-  EventDetail,
-  EventDetailHeader,
-  EventDetailContentHeader,
-  EventDetailContent,
   AdContainer,
   AdBanner,
 } from './styled';
@@ -310,16 +302,7 @@ const Event = () => {
               </EventOnlineRegistrationButton>
             </EventOnlineRegistration>
           </EventRegistration>
-          <EventDetails>
-            <EventDetailsHeader>Event Details</EventDetailsHeader>
-            {details.map((detail) => (
-              <EventDetailsCollapsible
-                key={detail.title}
-                title={detail.title}
-                contents={detail.contents}
-              />
-            ))}
-          </EventDetails>
+          <EventDetails details={details} />
         </EventContainer>
         <AdContainer>
           <AdBanner src="https://via.placeholder.com/300x600" />
@@ -327,44 +310,6 @@ const Event = () => {
       </EventAdContainer>
     </EventMainContainer>
   );
-};
-
-const EventDetailsCollapsible = ({ title, contents }) => {
-  const [collapsed, setCollapsed] = useState(false);
-
-  return (
-    <EventDetail>
-      <EventDetailHeader onClick={() => setCollapsed(!collapsed)}>
-        <span>{title}</span>
-        <img src={dropdownIcon} alt="dropdown" width={20} height={20} />
-      </EventDetailHeader>
-      {collapsed &&
-        contents.map((content) => (
-          <EventDetailContent key={content.header}>
-            <EventDetailContentHeader>
-              {content.header}
-            </EventDetailContentHeader>
-            {content.content}
-          </EventDetailContent>
-        ))}
-    </EventDetail>
-  );
-};
-
-EventDetailsCollapsible.propTypes = {
-  title: PropTypes.string,
-  contents: PropTypes.arrayOf(
-    PropTypes.shape({
-      header: PropTypes.string,
-      content: PropTypes.string,
-      map: PropTypes.func,
-    }),
-  ),
-};
-
-EventDetailsCollapsible.defaultProps = {
-  title: 'PropTypes.string',
-  contents: {},
 };
 
 export default Event;
