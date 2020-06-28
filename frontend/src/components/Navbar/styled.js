@@ -38,7 +38,8 @@ export const NavbarLogoContainer = styled.div`
 `;
 
 export const NavbarLogoText = styled.span`
-  font-family: 'Exo', sans-serif;
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: 700;
   margin-left: 10px;
   font-size: 30px;
@@ -55,7 +56,8 @@ export const NavbarItem = styled.li`
   margin: auto 26px;
 
   a {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    font-style: normal;
     font-size: 16px;
     display: flex;
     text-decoration: none;

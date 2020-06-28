@@ -25,7 +25,8 @@ export const HomeSearchInput = styled.input`
   border-radius: 48px 0 0 48px;
   border: 2px solid rgba(196, 196, 196, 0.7);
   font-size: 20px;
-  font-family: 'Exo';
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: 600;
   color: #a2a2a2;
   background-color: #fafbfb;
@@ -45,7 +46,8 @@ export const HomeSearchButton = styled.a`
   color: #fff;
   cursor: pointer;
   border-radius: 0 48px 48px 0;
-  font-family: 'Montserrat' sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: bold;
   font-size: 20px;
 `;

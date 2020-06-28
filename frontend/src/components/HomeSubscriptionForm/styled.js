@@ -11,8 +11,6 @@ export const SubscriptionForm = styled.div`
 `;
 
 export const SubscriptionTitle = styled.header`
-  font-family: 'Exo';
-  font-style: normal;
   font-weight: 800;
   font-size: 40px;
 `;
@@ -22,7 +20,8 @@ export const SubscriptionInput = styled.input`
   width: 566px;
   border-bottom: 2px solid;
   padding: 10px 0;
-  font-family: 'Exo';
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: bold;
   font-size: 20px;
   margin: 10px;
@@ -42,6 +41,8 @@ export const SubscriptionButton = styled.a`
   background-color: orange;
   color: #fff;
   border-radius: 52px;
-  font-weight: bold;
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
   margin: 30px auto;
 `;

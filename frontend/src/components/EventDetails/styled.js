@@ -2,16 +2,17 @@ import styled from 'styled-components/macro';
 
 export const EventDetailsContainer = styled.div`
   margin-top: 60px;
+
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
 `;
 
 export const EventDetailsHeader = styled.header`
-  font-family: 'Exo';
   font-weight: bold;
   font-size: 28px;
 `;
 
 export const EventDetail = styled.div`
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 20px;
   padding: 18px;
@@ -30,7 +31,6 @@ export const EventDetailHeader = styled.header`
 `;
 
 export const EventDetailContent = styled.div`
-  font-family: 'Exo';
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
@@ -38,7 +38,6 @@ export const EventDetailContent = styled.div`
 `;
 
 export const EventDetailContentHeader = styled.header`
-  font-family: 'Exo';
   font-weight: bold;
   font-size: 16px;
   line-height: 32px;

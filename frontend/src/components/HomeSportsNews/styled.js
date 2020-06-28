@@ -27,8 +27,10 @@ export const SportsNewsBannerDescriptionContainer = styled.div`
   color: #fff;
   text-align: left;
 
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
+
   header {
-    font-family: 'Exo';
     font-weight: 900;
     font-size: 36px;
     margin-bottom: 5px;
@@ -36,8 +38,6 @@ export const SportsNewsBannerDescriptionContainer = styled.div`
   }
 
   span {
-    font-family: Exo;
-    font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
@@ -82,7 +82,8 @@ export const SportsArticleContentContainer = styled.div`
 
 export const SportsArticleTitle = styled(Link)`
   font-size: 28px;
-  font-family: 'Exo';
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: 800;
   text-decoration: none;
   color: #000;
@@ -92,10 +93,11 @@ export const SportsArticleInfo = styled.div`
   margin: 10px 0;
   display: flex;
   align-items: center;
+
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
 `;
 
 export const SportsArticleAuthor = styled.span`
-  font-family: 'Exo';
   font-style: italic;
   font-weight: bold;
   font-size: 16px;
@@ -111,14 +113,14 @@ export const SportsArticleSport = styled.span`
   background-color: #a1afaf;
   height: 23px;
   color: #fff;
-  font-family: 'Exo';
+  font-style: normal;
   font-size: 12px;
   font-weight: bold;
   align-items: center;
   margin-left: 5px;
 `;
 export const SportsArticleContent = styled.article`
-  font-family: 'Noto Serif', serif;
+  font-family: 'Noto Serif', Georgia, serif;
   font-weight: normal;
   font-size: 16px;
   line-height: 28px;

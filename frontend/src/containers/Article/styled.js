@@ -18,7 +18,8 @@ export const ArticleBanner = styled.div`
 export const ArticleHeader = styled.header`
   width: 60vw;
   margin-top: 43px;
-  font-family: 'Exo';
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-size: 52px;
   font-weight: 800;
   text-align: center;
@@ -27,6 +28,9 @@ export const ArticleHeader = styled.header`
 
 export const ArticleInfo = styled.div`
   text-align: center;
+
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
 `;
 
 export const ArticleAuthorSport = styled.div`
@@ -35,7 +39,6 @@ export const ArticleAuthorSport = styled.div`
 `;
 
 export const ArticleAuthor = styled.span`
-  font-family: 'Exo';
   font-size: 20px;
   font-weight: 600;
   font-weight: bold;
@@ -52,7 +55,6 @@ export const ArticleSport = styled.span`
   background-color: #6f6f6f;
   height: 25px;
   color: #fff;
-  font-family: 'Exo';
   font-size: 12px;
   font-weight: bold;
   align-items: center;
@@ -60,14 +62,14 @@ export const ArticleSport = styled.span`
 `;
 
 export const ArticleDate = styled.span`
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 16px;
   color: #6f6f6f;
 `;
 
 export const ArticleContent = styled.article`
-  font-family: 'Noto Serif';
+  font-family: 'Noto Serif', Georgia, serif;
+  font-style: normal;
   width: 628px;
   font-size: 18px;
   line-height: 36px;
@@ -88,7 +90,8 @@ export const ArticleAdBanner = styled.img``;
 
 export const ArticleShare = styled.div`
   margin-top: 20px;
-  font-family: Exo;
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
   font-weight: 800;
   font-size: 24px;
 `;
@@ -111,6 +114,8 @@ export const ArticleAuthorBioContainer = styled.div`
   border-bottom: 2px dashed #c4c4c4;
   width: 628px;
   padding: 28px 0;
+
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
 `;
 
 export const AuthorInfo = styled.div`
@@ -128,14 +133,13 @@ export const AuthorNameRole = styled.div`
 
 export const AuthorName = styled.span`
   display: block;
-  font-family: 'Exo';
+  font-style: normal;
   font-weight: bold;
   font-size: 18px;
 `;
 
 export const AuthorRole = styled.span`
   display: block;
-  font-family: 'Exo';
   font-style: italic;
   font-weight: 600;
   font-size: 16px;
@@ -144,7 +148,7 @@ export const AuthorRole = styled.span`
 
 export const AuthorBio = styled.article`
   margin-top: 18px;
-  font-family: 'Exo';
+  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
@@ -164,7 +168,7 @@ export const RelatedStoriesContainer = styled.div`
 `;
 
 export const RelatedStoriesHeader = styled.header`
-  font-family: 'Exo';
+  font-style: normal;
   font-weight: 800;
   font-size: 52px;
   line-height: 69px;
@@ -186,7 +190,7 @@ export const StoryImage = styled.img`
 
 export const StoryTitle = styled.header`
   margin-top: 14px;
-  font-family: 'Exo';
+  font-style: normal;
   font-weight: 800;
   font-size: 20px;
 `;

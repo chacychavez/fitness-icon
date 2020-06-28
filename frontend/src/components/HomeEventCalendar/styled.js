@@ -3,6 +3,9 @@ import styled from 'styled-components/macro';
 
 export const EventCalendarContainer = styled.div`
   padding: 50px 200px;
+
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
 `;
 
 export const EventsContainer = styled.div`
@@ -10,7 +13,6 @@ export const EventsContainer = styled.div`
 `;
 
 export const EventHeader = styled.header`
-  font-family: 'Exo';
   text-align: left;
   font-size: 28px;
   font-weight: bold;
@@ -35,7 +37,6 @@ export const EventCalendarLocationDateContainer = styled.div`
 `;
 
 export const EventCalendarLocation = styled.span`
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 14px;
   color: #6f6f6f;
@@ -43,7 +44,6 @@ export const EventCalendarLocation = styled.span`
 `;
 
 export const EventCalendarDate = styled.span`
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 14px;
   color: #6f6f6f;
@@ -64,7 +64,6 @@ export const EventImage = styled.img`
 
 export const EventName = styled(Link)`
   display: block;
-  font-family: 'Exo';
   font-weight: bold;
   text-align: left;
   margin-top: 14px;
@@ -77,7 +76,6 @@ export const EventName = styled(Link)`
 export const EventDate = styled.div`
   text-align: left;
   margin-top: 10px;
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 16px;
   color: #6f6f6f;
@@ -93,7 +91,6 @@ export const EventViewFullButton = styled.a`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-family: 'Exo';
   font-weight: 600;
   color: #fff;
 `;

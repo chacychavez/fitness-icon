@@ -13,13 +13,15 @@ export const HomeSearchSuggestionContainer = styled.div`
   box-sizing: border-box;
   border-radius: 17px;
   padding: 0 17px;
+
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
 `;
 
 export const SearchText = styled.header`
   display: flex;
   align-items: center;
   padding: 10px 0;
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 16px;
   line-height: 21px;
@@ -37,7 +39,6 @@ export const SearchEventsSuggestions = styled.div`
 
 export const SearchEventsHeader = styled.div`
   margin-top: 15px;
-  font-family: 'Exo';
   font-weight: bold;
   font-size: 16px;
   line-height: 21px;
@@ -60,14 +61,12 @@ export const SearchEventInfo = styled.div`
 `;
 
 export const SearchEventName = styled.div`
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 16px;
 `;
 
 export const SearchEventDateLocation = styled.div`
   margin-top: 2px;
-  font-family: 'Exo';
   font-weight: 500;
   font-size: 14px;
   color: #8b969b;
@@ -79,7 +78,6 @@ export const SearchClassesSuggestions = styled.div`
 
 export const SearchClassesHeader = styled.div`
   margin-top: 15px;
-  font-family: 'Exo';
   font-weight: bold;
   font-size: 16px;
   line-height: 21px;
@@ -102,14 +100,12 @@ export const SearchClassInfo = styled.div`
 `;
 
 export const SearchClassName = styled.div`
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 16px;
 `;
 
 export const SearchClassDateLocation = styled.div`
   margin-top: 2px;
-  font-family: 'Exo';
   font-weight: 500;
   font-size: 14px;
   color: #8b969b;
@@ -117,7 +113,6 @@ export const SearchClassDateLocation = styled.div`
 
 export const SearchSeeAll = styled.div`
   padding: 15px 0;
-  font-family: 'Exo';
   font-weight: bold;
   font-size: 16px;
   line-height: 21px;

@@ -6,6 +6,9 @@ export const EventMainContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding-bottom: 100px;
+
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
 `;
 
 export const EventBanner = styled.div`
@@ -28,14 +31,12 @@ export const EventContainer = styled.div`
 `;
 
 export const EventHeader = styled.header`
-  font-family: 'Exo';
   font-weight: 800;
   font-size: 36px;
 `;
 
 export const EventDateLocationWebsiteContainer = styled.div`
   display: flex;
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 16px;
   margin: 30px 0;
@@ -56,7 +57,6 @@ export const EventWebsite = styled.div`
 
 export const EventWeatherParticipantsContainer = styled.div`
   display: flex;
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 16px;
   margin: 30px 0;
@@ -70,7 +70,6 @@ export const EventWeather = styled.div`
 export const EventParticipants = styled.div``;
 
 export const EventOrganizer = styled.div`
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 16px;
   margin: 30px 0;
@@ -81,7 +80,6 @@ export const EventOrganizer = styled.div`
 `;
 
 export const EventArticle = styled.div`
-  font-family: 'Exo';
   font-weight: 500;
   font-size: 16px;
   line-height: 28px;
@@ -93,7 +91,6 @@ export const EventCategories = styled.div`
 `;
 
 export const EventCategoryHeader = styled.header`
-  font-family: 'Exo';
   font-weight: bold;
   font-size: 28px;
 `;
@@ -114,7 +111,6 @@ export const EventCategoryRouteContainer = styled.div`
 `;
 
 export const EventCategory = styled.div`
-  font-family: 'Exo';
   font-weight: bold;
   font-size: 28px;
 `;
@@ -134,20 +130,17 @@ export const EventSchedule = styled.div`
 `;
 
 export const Time = styled.span`
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 18px;
 `;
 
 export const Description = styled.span`
-  font-family: 'Exo';
   font-weight: 500;
   font-size: 16px;
   color: #6d7577;
 `;
 
 export const EventPrice = styled.div`
-  font-family: 'Exo';
   font-weight: 600;
   font-size: 18px;
   color: #27aeae;
@@ -159,7 +152,6 @@ export const EventInclusionsContainer = styled.div`
 `;
 
 export const EventInclusionHeader = styled.header`
-  font-family: 'Exo';
   font-weight: bold;
   font-size: 28px;
 `;
@@ -186,13 +178,11 @@ export const EventInclusionInfo = styled.div`
 `;
 
 export const EventInclusionName = styled.div`
-  font-family: 'Exo';
   font-weight: bold;
   font-size: 20px;
 `;
 
 export const EventInclusionCondition = styled.div`
-  font-family: 'Exo';
   font-weight: 500;
   font-size: 16px;
 `;
@@ -207,13 +197,11 @@ export const EventRegistration = styled.div`
 `;
 
 export const EventRegistrationHeader = styled.header`
-  font-family: 'Exo';
   font-weight: bold;
   font-size: 28px;
 `;
 
 export const EventRegistrationPeriod = styled.div`
-  font-family: 'Exo';
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
@@ -231,7 +219,6 @@ export const RegistrationRegular = styled.div``;
 export const RegistrationOnsite = styled.div``;
 
 export const EventRegistrationSites = styled.div`
-  font-family: 'Exo';
   font-weight: 500;
   font-size: 16px;
   line-height: 30px;
@@ -260,7 +247,6 @@ export const SiteBranch = styled.li``;
 
 export const EventOnlineRegistration = styled.div`
   margin-top: 36px;
-  font-family: 'Exo';
 `;
 
 export const EventOnlineRegistrationHeader = styled.div`

@@ -3,6 +3,9 @@ import styled from 'styled-components/macro';
 export const ArticlesContainer = styled.div`
   margin-top: 40px;
   padding: 0 20px;
+
+  font-family: 'Exo', Arial, Helvetica, sans-serif;
+  font-style: normal;
 `;
 
 export const Articles = styled.div`
@@ -23,7 +26,6 @@ export const ArticleImage = styled.img`
 export const ArticleTitle = styled.header`
   width: 300px;
   text-align: left;
-  font-family: 'Exo';
   font-weight: 800;
   font-size: 18px;
   line-height: 24px;
