@@ -12,9 +12,7 @@ import {
   ClassPrice,
 } from './styled';
 
-const ClassSearchResult = ({
-  name, place, schedule, location, price,
-}) => (
+const ClassSearchResult = ({ name, place, schedule, location, price }) => (
   <ClassSearchResultContainer>
     <ClassImg src="https://via.placeholder.com/112x96" />
     <ClassInfo>

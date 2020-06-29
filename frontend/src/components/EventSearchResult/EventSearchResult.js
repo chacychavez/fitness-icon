@@ -15,9 +15,7 @@ import {
   EventPrice,
 } from './styled';
 
-const EventSearchResult = ({
-  date, name, levels, location, price,
-}) => (
+const EventSearchResult = ({ date, name, levels, location, price }) => (
   <EventSearchResultContainer>
     <EventDate>
       <EventDay>{date.day}</EventDay>
