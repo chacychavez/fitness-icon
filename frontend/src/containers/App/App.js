@@ -18,6 +18,7 @@ import EventCalendar from '../EventCalendar';
 import EventSubmission from '../EventSubmission';
 import Home from '../Home';
 import ProductReviews from '../ProductReviews';
+import SearchResults from '../SearchResults';
 import SportsDirectory from '../SportsDirectory';
 
 import '../../assets/fonts/fonts.css';
@@ -52,6 +53,7 @@ const App = () => (
           <Route exact path="/product-reviews" component={ProductReviews} />
           <Route exact path="/submit-an-event" component={EventSubmission} />
           <Route exact path="/advertise" component={Advertise} />
+          <Route exact path="/search" component={SearchResults} />
         </Route>
       </Switch>
     </ApolloProvider>

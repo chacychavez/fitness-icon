@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 
+import { useHistory } from 'react-router-dom';
+
 import HomeArticles from '../../components/HomeArticles';
 import HomeEventCalendar from '../../components/HomeEventCalendar';
 import HomeHeader from '../../components/HomeHeader';
@@ -10,24 +12,29 @@ import useOnClickOutside from '../../hooks/useOnClickOutside';
 import {
   HomeContainer,
   HomeSearchContainer,
-  HomeSearch,
+  HomeSearchForm,
   HomeSearchInput,
   HomeSearchButton,
   HomeBanner,
 } from './styled';
 
 const Home = () => {
+  const history = useHistory();
   const ref = useRef();
   const [isFocused, setIsFocused] = useState(false);
   const [searchText, setSearchText] = useState(null);
 
   useOnClickOutside(ref, () => setIsFocused(false));
 
+  const handleSubmit = () => {
+    history.push(`/search?text=${searchText}`);
+  };
+
   return (
     <HomeContainer>
       <HomeSearchContainer>
         <HomeHeader>Find your next challenge.</HomeHeader>
-        <HomeSearch>
+        <HomeSearchForm onSubmit={handleSubmit}>
           <HomeSearchInput
             onFocus={() => {
               setIsFocused(true);
@@ -36,8 +43,8 @@ const Home = () => {
               setSearchText(event.target.value);
             }}
           />
-          <HomeSearchButton>Go!</HomeSearchButton>
-        </HomeSearch>
+          <HomeSearchButton type="submit" value="Go!" />
+        </HomeSearchForm>
         {isFocused && searchText && (
           <HomeSearchSuggestion ref={ref} searchText={searchText} />
         )}

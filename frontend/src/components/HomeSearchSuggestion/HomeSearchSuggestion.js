@@ -66,7 +66,7 @@ const HomeSearchSuggestion = React.forwardRef((props, ref) => {
         <SearchEventsHeader>Sports Events</SearchEventsHeader>
         <SearchEvents>
           {eventsSuggestions.map((eventSuggestion) => (
-            <SearchEvent>
+            <SearchEvent key={eventSuggestion.name}>
               <SearchEventImg src="https://via.placeholder.com/32x32" />
               <SearchEventInfo>
                 <SearchEventName>{eventSuggestion.name}</SearchEventName>
@@ -82,7 +82,7 @@ const HomeSearchSuggestion = React.forwardRef((props, ref) => {
         <SearchClassesHeader>Classes</SearchClassesHeader>
         <SearchClasses>
           {classesSuggestions.map((classesSuggestion) => (
-            <SearchClass>
+            <SearchClass key={classesSuggestion.name}>
               <SearchClassImg src="https://via.placeholder.com/32x32" />
               <SearchClassInfo>
                 <SearchClassName>{classesSuggestion.name}</SearchClassName>

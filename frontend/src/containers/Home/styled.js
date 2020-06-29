@@ -12,7 +12,7 @@ export const HomeSearchContainer = styled.div`
   justify-content: center;
 `;
 
-export const HomeSearch = styled.div`
+export const HomeSearchForm = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +36,7 @@ export const HomeSearchInput = styled.input`
   }
 `;
 
-export const HomeSearchButton = styled.a`
+export const HomeSearchButton = styled.input`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,11 +45,13 @@ export const HomeSearchButton = styled.a`
   background-color: #000;
   color: #fff;
   cursor: pointer;
+  border: none;
   border-radius: 0 48px 48px 0;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
+  text-decoration-line: none;
 `;
 
 export const HomeBanner = styled.div`
