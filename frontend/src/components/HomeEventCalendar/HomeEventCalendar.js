@@ -118,7 +118,7 @@ const HomeEventCalendar = () => (
             <EventItem key={event.name}>
               <EventImage src="https://via.placeholder.com/225x175" />
               <EventName
-                to={`/event-calendar/${event.name
+                to={`/event-calendar/sports-events/${event.name
                   .match(
                     /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g,
                   )
