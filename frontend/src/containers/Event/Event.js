@@ -53,9 +53,18 @@ import {
   EventOnlineRegistrationHeader,
   EventOnlineRegistrationDetails,
   EventOnlineRegistrationButton,
+  ChallengeLinksContainer,
+  ChallengeLinkHeader,
+  ChallengeLinkDetails,
+  ChallengeLinks,
+  ChallengeLink,
   AdContainer,
   AdBanner,
 } from './styled';
+
+import fbLogo from '../../assets/images/fb-square.svg';
+import twitterLogo from '../../assets/images/twitter-square.svg';
+import emailLogo from '../../assets/images/email-square.svg';
 
 const Event = () => {
   const content =
@@ -303,6 +312,24 @@ const Event = () => {
             </EventOnlineRegistration>
           </EventRegistration>
           <EventDetails details={details} />
+
+          <ChallengeLinksContainer>
+            <ChallengeLinkHeader>Challlenge your friends!</ChallengeLinkHeader>
+            <ChallengeLinkDetails>
+              Share this event on social media or through email.
+            </ChallengeLinkDetails>
+            <ChallengeLinks>
+              <ChallengeLink type="fb" src={fbLogo}>
+                Facebook
+              </ChallengeLink>
+              <ChallengeLink type="twitter" src={twitterLogo}>
+                Twitter
+              </ChallengeLink>
+              <ChallengeLink type="email" src={emailLogo}>
+                Email
+              </ChallengeLink>
+            </ChallengeLinks>
+          </ChallengeLinksContainer>
         </EventContainer>
         <AdContainer>
           <AdBanner src="https://via.placeholder.com/300x600" />
