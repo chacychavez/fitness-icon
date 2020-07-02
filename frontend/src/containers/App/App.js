@@ -13,6 +13,7 @@ import client from '../../utils/apolloClient';
 import Advertise from '../Advertise';
 import Article from '../Article';
 import Articles from '../Articles';
+import Class from '../Class';
 import Event from '../Event';
 import EventCalendar from '../EventCalendar';
 import EventSubmission from '../EventSubmission';
@@ -48,6 +49,7 @@ const App = () => (
               path="/event-calendar/sports-events/:id"
               component={Event}
             />
+            <Route exact path="/event-calendar/classes/:id" component={Class} />
           </Route>
           <Route exact path="/sports-directory" component={SportsDirectory} />
           <Route path="/articles">
