@@ -181,7 +181,9 @@ const SearchResults = () => {
             <SearchTab
               key={tab.id}
               active={tab.id === activeTab}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => {
+                setActiveTab(tab.id);
+              }}
             >
               {tab.text}
             </SearchTab>
@@ -199,7 +201,9 @@ const SearchResults = () => {
             <SearchSortText
               key={sort.id}
               active={sort.id === activeSortText}
-              onClick={() => setActiveSortText(sort.id)}
+              onClick={() => {
+                setActiveSortText(sort.id);
+              }}
             >
               {sort.text}
             </SearchSortText>
