@@ -25,29 +25,41 @@ export const EventHeader = styled.header`
 
 export const EventCalendarLocationDateContainer = styled.div`
   display: inline-block;
+  cursor: pointer;
+`;
+
+export const EventCalendarLocation = styled.span`
   padding: 4px 16px;
   border: 1px solid #c4c4c4;
   box-sizing: border-box;
   border-radius: 40px;
   margin: 0 10px;
-
-  img {
-    vertical-align: middle;
-  }
-`;
-
-export const EventCalendarLocation = styled.span`
   font-weight: 600;
   font-size: 14px;
   color: #6f6f6f;
   margin-left: 10px;
+
+  img {
+    margin-left: 36px;
+    vertical-align: middle;
+  }
 `;
 
 export const EventCalendarDate = styled.span`
+  padding: 4px 16px;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 40px;
+  margin: 0 10px;
   font-weight: 600;
   font-size: 14px;
   color: #6f6f6f;
-  margin-right: 10px;
+  margin-left: 10px;
+
+  img {
+    margin-left: 36px;
+    vertical-align: middle;
+  }
 `;
 
 export const EventItemsContainer = styled.div`

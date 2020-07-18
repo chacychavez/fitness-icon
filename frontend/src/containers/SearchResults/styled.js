@@ -68,6 +68,34 @@ export const SearchFilterInput = styled.input`
   }
 `;
 
+export const SearchFilterDateContainer = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+export const SearchFilterDate = styled.span`
+  display: flex;
+  align-items: center;
+  padding: 4px 16px;
+  border: 1px solid #a7aeaf;
+  box-sizing: border-box;
+  box-shadow: inset 1px 3px 4px rgba(0, 0, 0, 0.02);
+  border-radius: 20px;
+  margin-right: 16px;
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  cursor: pointer;
+
+  color: #444545;
+
+  img {
+    margin-left: 36px;
+    vertical-align: middle;
+  }
+`;
+
 export const SearchResultsSort = styled.div`
   font-family: 'Exo';
   font-style: normal;

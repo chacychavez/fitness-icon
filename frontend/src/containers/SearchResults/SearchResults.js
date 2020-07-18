@@ -1,10 +1,13 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 
 import { useLocation } from 'react-router-dom';
 
+import dateSearch from '../../assets/images/date-search-filter.svg';
 import ArticleSearchResult from '../../components/ArticleSearchResult';
 import ClassSearchResult from '../../components/ClassSearchResult';
 import EventSearchResult from '../../components/EventSearchResult';
+import CustomDateRangePicker from '../../components/CustomDateRangePicker';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 import {
   SearchResultsMainContainer,
   SearchResultsNavbar,
@@ -14,6 +17,8 @@ import {
   SearchResultsFilterSort,
   SearchResultsFilter,
   SearchFilterInput,
+  SearchFilterDateContainer,
+  SearchFilterDate,
   SearchResultsSort,
   SearchSortText,
   SearchResultsContainer,
@@ -31,6 +36,19 @@ const SearchResults = () => {
   const query = useQuery();
   const [activeTab, setActiveTab] = useState('events');
   const [activeSortText, setActiveSortText] = useState('date');
+  const [dates, setDates] = useState(null);
+  const [openPicker, setOpenPicker] = useState(false);
+
+  const ref = useRef();
+
+  useOnClickOutside(ref, () => {
+    if (!openPicker) setOpenPicker(false);
+  });
+
+  const onApply = (_dates) => {
+    setDates(_dates);
+    setOpenPicker(false);
+  };
 
   const sortTexts = useMemo(() => {
     const texts = [{ id: 'date', text: 'Date' }];
@@ -191,10 +209,35 @@ const SearchResults = () => {
         </SearchTabs>
       </SearchResultsNavbar>
       <SearchResultsFilterSort>
-        <SearchResultsFilter>
-          <SearchFilterInput type="text" placeholder="Filter by location.." />
-          <SearchFilterInput type="text" placeholder="Filter by date" />
-        </SearchResultsFilter>
+        {activeTab !== 'articles' && (
+          <SearchResultsFilter>
+            <SearchFilterInput type="text" placeholder="Filter by location.." />
+            <SearchFilterDateContainer>
+              <SearchFilterDate
+                onClick={() => {
+                  setOpenPicker(!openPicker);
+                }}
+              >
+                Filter by date
+                <img
+                  src={dateSearch}
+                  alt="Date search filter"
+                  width={16}
+                  height={16}
+                />
+              </SearchFilterDate>
+              {openPicker && (
+                <CustomDateRangePicker
+                  ref={ref}
+                  onApply={onApply}
+                  onClear={() => {
+                    setOpenPicker(false);
+                  }}
+                />
+              )}
+            </SearchFilterDateContainer>
+          </SearchResultsFilter>
+        )}
         <SearchResultsSort>
           <span>Sort by:</span>
           {sortTexts.map((sort) => (
@@ -210,6 +253,10 @@ const SearchResults = () => {
           ))}
         </SearchResultsSort>
       </SearchResultsFilterSort>
+      <div>
+        <span>{dates && dates.start.format()}</span>
+        <span>{dates && dates.end.format()}</span>
+      </div>
       <SearchResultsContainer>
         {searchResults[activeTab].map((result) => renderSearchResult(result))}
       </SearchResultsContainer>
