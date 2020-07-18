@@ -43,7 +43,11 @@ const EventDetailsCollapsible = ({ title, contents }) => {
 
   return (
     <EventDetail>
-      <EventDetailHeader onClick={() => setCollapsed(!collapsed)}>
+      <EventDetailHeader
+        onClick={() => {
+          setCollapsed(!collapsed);
+        }}
+      >
         <span>{title}</span>
         <img src={dropdownIcon} alt="dropdown" width={20} height={20} />
       </EventDetailHeader>

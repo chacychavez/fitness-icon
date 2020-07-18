@@ -24,7 +24,9 @@ const Home = () => {
   const [isFocused, setIsFocused] = useState(false);
   const [searchText, setSearchText] = useState(null);
 
-  useOnClickOutside(ref, () => setIsFocused(false));
+  useOnClickOutside(ref, () => {
+    setIsFocused(false);
+  });
 
   const handleSubmit = () => {
     history.push(`/search?text=${searchText}`);
