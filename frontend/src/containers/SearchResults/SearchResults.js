@@ -3,6 +3,7 @@ import React, { useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import dateSearch from '../../assets/images/date-search-filter.svg';
+import mapPin from '../../assets/images/map-pin.svg';
 import ArticleSearchResult from '../../components/ArticleSearchResult';
 import ClassSearchResult from '../../components/ClassSearchResult';
 import EventSearchResult from '../../components/EventSearchResult';
@@ -211,7 +212,11 @@ const SearchResults = () => {
       <SearchResultsFilterSort>
         {activeTab !== 'articles' && (
           <SearchResultsFilter>
-            <SearchFilterInput type="text" placeholder="Filter by location.." />
+            <SearchFilterInput
+              type="text"
+              placeholder="Filter by location.."
+              icon={mapPin}
+            />
             <SearchFilterDateContainer>
               <SearchFilterDate
                 onClick={() => {

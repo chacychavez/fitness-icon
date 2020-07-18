@@ -12,6 +12,12 @@ export const EventsContainer = styled.div`
   margin: 40px 0;
 `;
 
+export const EventHeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const EventHeader = styled.header`
   text-align: left;
   font-size: 28px;
@@ -23,13 +29,20 @@ export const EventHeader = styled.header`
   }
 `;
 
+export const EventViewAllSpan = styled.span`
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration-line: underline;
+  cursor: pointer;
+`;
+
 export const EventCalendarLocationDateContainer = styled.div`
   display: inline-block;
   cursor: pointer;
 `;
 
-export const EventCalendarLocation = styled.span`
-  padding: 4px 16px;
+export const EventCalendarLocation = styled.input`
+  padding: 4px 32px 4px 16px;
   border: 1px solid #c4c4c4;
   box-sizing: border-box;
   border-radius: 40px;
@@ -38,10 +51,20 @@ export const EventCalendarLocation = styled.span`
   font-size: 14px;
   color: #6f6f6f;
   margin-left: 10px;
+  width: 214px;
+  background-image: ${(props) => `url(${props.icon})`};
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position-y: center;
+  background-position-x: 184px;
 
-  img {
-    margin-left: 36px;
-    vertical-align: middle;
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+
+  &:focus {
+    outline: none;
   }
 `;
 

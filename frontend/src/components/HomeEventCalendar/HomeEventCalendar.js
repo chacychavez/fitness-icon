@@ -8,7 +8,9 @@ import useOnClickOutside from '../../hooks/useOnClickOutside';
 import {
   EventCalendarContainer,
   EventsContainer,
+  EventHeaderContainer,
   EventHeader,
+  EventViewAllSpan,
   EventCalendarLocationDateContainer,
   EventCalendarLocation,
   EventCalendarDate,
@@ -140,10 +142,11 @@ const HomeEventCalendar = () => {
         )}
       </EventCalendarLocationDateContainer>
       <EventCalendarLocationDateContainer>
-        <EventCalendarLocation>
-          Filter by location...
-          <img src={mapPin} alt="Map pin" width={16} height={16} />
-        </EventCalendarLocation>
+        <EventCalendarLocation
+          type="text"
+          placeholder="Filter by location..."
+          icon={mapPin}
+        />
       </EventCalendarLocationDateContainer>
       <div>
         <span>{dates && dates.start.format()}</span>
@@ -151,10 +154,13 @@ const HomeEventCalendar = () => {
       </div>
       {sportEvents.map((sportEvent) => (
         <EventsContainer key={sportEvent.sport}>
-          <EventHeader>
-            <img src={mapPin} width={24} height={24} alt="sport" />
-            {sportEvent.sport}
-          </EventHeader>
+          <EventHeaderContainer>
+            <EventHeader>
+              <img src={dateSearch} width={24} height={24} alt="sport" />
+              {sportEvent.sport}
+            </EventHeader>
+            <EventViewAllSpan>View all</EventViewAllSpan>
+          </EventHeaderContainer>
           <EventItemsContainer>
             {sportEvent.events.map((event) => (
               <EventItem key={event.name}>

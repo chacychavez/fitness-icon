@@ -60,8 +60,14 @@ export const SearchFilterInput = styled.input`
   box-sizing: border-box;
   box-shadow: inset 1px 3px 4px rgba(0, 0, 0, 0.02);
   border-radius: 53px;
-  padding: 4px 16px;
+  padding: 4px 32px 4px 16px;
   margin-right: 16px;
+  width: 214px;
+  background-image: ${(props) => `url(${props.icon})`};
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position-y: center;
+  background-position-x: 184px;
 
   &:focus {
     outline: none;
