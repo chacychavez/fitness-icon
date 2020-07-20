@@ -1,5 +1,5 @@
-import styled from 'styled-components/macro';
 import DateRangePicker from 'react-daterange-picker';
+import styled from 'styled-components/macro';
 import 'react-daterange-picker/dist/css/react-calendar.css'; // For some basic styling. (OPTIONAL)
 
 export const DateRangePickerContainer = styled.div`

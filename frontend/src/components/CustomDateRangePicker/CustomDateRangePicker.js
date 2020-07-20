@@ -2,7 +2,10 @@ import React, { useState, useMemo } from 'react';
 
 import Moment from 'moment';
 import { extendMoment } from 'moment-range';
+import PropTypes from 'prop-types';
 
+import leftArrow from '../../assets/images/arrow-left.svg';
+import rightArrow from '../../assets/images/arrow-right.svg';
 import {
   DateRangePickerContainer,
   PickerHeader,
@@ -12,9 +15,6 @@ import {
   ButtonsContainer,
   Button,
 } from './styled';
-
-import rightArrow from '../../assets/images/arrow-right.svg';
-import leftArrow from '../../assets/images/arrow-left.svg';
 
 const months = [
   'January',
@@ -37,7 +37,7 @@ const CustomDateRangePicker = React.forwardRef(({ onApply, onClear }, ref) => {
   const [selectedMonth, setSelectedMonth] = useState(null);
   const [datePickerKey, setDatePickerKey] = useState(Math.random());
 
-  const _onSelect = (_dates) => {
+  const onSelect = (_dates) => {
     setDates(_dates);
     setSelectedMonth(null);
   };
@@ -70,15 +70,15 @@ const CustomDateRangePicker = React.forwardRef(({ onApply, onClear }, ref) => {
   };
 
   const monthsSelections = useMemo(() => {
-    let startIndex = parseInt(moment().format('M')) - 1;
-    let nextYear = parseInt(moment().year()) + 1;
-    let _monthsSelections = [];
+    let startIndex = parseInt(moment().format('M'), 10) - 1;
+    const nextYear = parseInt(moment().year(), 10) + 1;
+    const items = [];
     for (let i = 0; i < 8; i += 1, startIndex += 1) {
-      _monthsSelections.push(
-        months[startIndex % 12] + `${startIndex < 12 ? '' : ` ${nextYear}`}`,
+      items.push(
+        `${months[startIndex % 12]}${startIndex < 12 ? '' : ` ${nextYear}`}`,
       );
     }
-    return _monthsSelections;
+    return items;
   }, []);
 
   return (
@@ -103,7 +103,7 @@ const CustomDateRangePicker = React.forwardRef(({ onApply, onClear }, ref) => {
         rightArrow={rightArrow}
         leftArrow={leftArrow}
         minimumDate={new Date()}
-        onSelect={_onSelect}
+        onSelect={onSelect}
         value={dates}
         disableNavigation
         numberOfCalendars={2}
@@ -117,5 +117,10 @@ const CustomDateRangePicker = React.forwardRef(({ onApply, onClear }, ref) => {
     </DateRangePickerContainer>
   );
 });
+
+CustomDateRangePicker.propTypes = {
+  onApply: PropTypes.func.isRequired,
+  onClear: PropTypes.func.isRequired,
+};
 
 export default CustomDateRangePicker;

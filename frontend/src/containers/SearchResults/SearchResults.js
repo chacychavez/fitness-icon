@@ -6,8 +6,8 @@ import dateSearch from '../../assets/images/date-search-filter.svg';
 import mapPin from '../../assets/images/map-pin.svg';
 import ArticleSearchResult from '../../components/ArticleSearchResult';
 import ClassSearchResult from '../../components/ClassSearchResult';
-import EventSearchResult from '../../components/EventSearchResult';
 import CustomDateRangePicker from '../../components/CustomDateRangePicker';
+import EventSearchResult from '../../components/EventSearchResult';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 import {
   SearchResultsMainContainer,

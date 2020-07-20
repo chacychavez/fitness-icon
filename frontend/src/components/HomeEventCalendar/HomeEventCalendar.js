@@ -2,9 +2,9 @@ import React, { useRef, useState } from 'react';
 
 import dateSearch from '../../assets/images/date-search-filter.svg';
 import mapPin from '../../assets/images/map-pin.svg';
-import HomeHeader from '../HomeHeader';
-import CustomDateRangePicker from '../CustomDateRangePicker';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
+import CustomDateRangePicker from '../CustomDateRangePicker';
+import HomeHeader from '../HomeHeader';
 import {
   EventCalendarContainer,
   EventsContainer,
