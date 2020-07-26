@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import addField from '../../assets/images/add-field.svg';
+import RichTextEditor from '../RichTextEditor';
 import {
   EventDetailsContainer,
   EventDetailsDescription,
@@ -121,32 +122,16 @@ const EventSubmissionDetails = () => {
           />
         </InputGroup>
         <Container>
-          <label htmlFor="description">
-            Description*
-            <textarea
-              id="description"
-              name="description"
-              rows="4"
-              cols="66"
-              placeholder="Provide a short description for your event..."
-            />
-          </label>
+          <span>Description*</span>
+          <RichTextEditor placeholder="Provide a short description for your event..." />
         </Container>
       </GeneralDetailsContainer>
       <Separator />
       <RegistrationDetailsContainer>
         <EventDetailsHeader>Registration</EventDetailsHeader>
         <Container>
-          <label htmlFor="registration-details">
-            Registration details*
-            <textarea
-              id="registration-details"
-              name="registration-details"
-              rows="4"
-              cols="66"
-              placeholder="Describe when, where, and how to register..."
-            />
-          </label>
+          <span>Registration details*</span>
+          <RichTextEditor placeholder="Describe when, where, and how to register..." />
         </Container>
         <InputGroup>
           <InputContainer
@@ -299,16 +284,8 @@ const EventSubmissionDetails = () => {
                 />
               </InputGroup>
               <Container>
-                <label htmlFor="section-text">
-                  Section text
-                  <textarea
-                    id="section-text"
-                    name="section-text"
-                    rows="4"
-                    cols="66"
-                    placeholder="Provide a description for the topic..."
-                  />
-                </label>
+                <span>Section text</span>
+                <RichTextEditor placeholder="Provide a description for the topic..." />
               </Container>
             </div>
           ))
@@ -333,16 +310,8 @@ const EventSubmissionDetails = () => {
                 <InputContainer label="Question" id="question" size="large" />
               </InputGroup>
               <Container>
-                <label htmlFor="answer">
-                  Answer
-                  <textarea
-                    id="answer"
-                    name="answer"
-                    rows="4"
-                    cols="66"
-                    placeholder="Provide a short description for your event..."
-                  />
-                </label>
+                <span>Answer</span>
+                <RichTextEditor placeholder="Provide a short description for your event..." />
               </Container>
             </div>
           ))
