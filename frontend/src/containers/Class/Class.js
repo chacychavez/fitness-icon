@@ -1,5 +1,13 @@
 import React from 'react';
 
+import organizerIcon from '../../assets/images/circle-logo.svg';
+import coachIcon from '../../assets/images/coach.svg';
+import contactIcon from '../../assets/images/contact.svg';
+import dateIcon from '../../assets/images/date-event.svg';
+import fbIcon from '../../assets/images/fb.svg';
+import igIcon from '../../assets/images/ig.svg';
+import locationIcon from '../../assets/images/map-pin.svg';
+import participantsIcon from '../../assets/images/participants.svg';
 import ChallengeShareLinks from '../../components/ChallengeShareLinks';
 import EventDetails from '../../components/EventDetails';
 import {
@@ -8,6 +16,7 @@ import {
   ClassContainer,
   ClassHeader,
   ClassAdContainer,
+  ClassIcon,
   ClassScheduleLocationContainer,
   ClassSchedule,
   ClassLocation,
@@ -95,18 +104,42 @@ const Class = () => {
         <ClassContainer>
           <ClassHeader>Underdog Fitness Strength Class</ClassHeader>
           <ClassScheduleLocationContainer>
-            <ClassSchedule>Every Sunday, 4:00 PM - 4:30 PM</ClassSchedule>
-            <ClassLocation>South Triangle, Quezon City</ClassLocation>
+            <ClassSchedule>
+              <ClassIcon src={dateIcon} />
+              Every Sunday, 4:00 PM - 4:30 PM
+            </ClassSchedule>
+            <ClassLocation>
+              <ClassIcon src={locationIcon} />
+              South Triangle, Quezon City
+            </ClassLocation>
           </ClassScheduleLocationContainer>
           <ClassOrganizerParticipantsContainer>
-            <ClassOrganizer>by Underdog Fitness</ClassOrganizer>
-            <ClassCoach>Led by Coach Mark Reyes</ClassCoach>
-            <ClassParticipants>13,000 participants</ClassParticipants>
+            <ClassOrganizer>
+              <ClassIcon src={organizerIcon} />
+              by Underdog Fitness
+            </ClassOrganizer>
+            <ClassCoach>
+              <ClassIcon src={coachIcon} />
+              Led by Coach Mark Reyes
+            </ClassCoach>
+            <ClassParticipants>
+              <ClassIcon src={participantsIcon} />
+              13,000 participants
+            </ClassParticipants>
           </ClassOrganizerParticipantsContainer>
           <ClassOrganizerContact>
-            <OrganizerContactNumber>+639278205956</OrganizerContactNumber>
-            <OrganizerInstagram>@underdogfitnessph</OrganizerInstagram>
-            <OrganizerFacebook>/underdogfitnessph</OrganizerFacebook>
+            <OrganizerContactNumber>
+              <ClassIcon src={contactIcon} />
+              +639278205956
+            </OrganizerContactNumber>
+            <OrganizerInstagram>
+              <ClassIcon src={igIcon} height={20} width={20} />
+              @underdogfitnessph
+            </OrganizerInstagram>
+            <OrganizerFacebook>
+              <ClassIcon src={fbIcon} height={20} width={20} />
+              /underdogfitnessph
+            </OrganizerFacebook>
           </ClassOrganizerContact>
           {content.split('\n').map((paragraph) => (
             <ClassArticle key={paragraph}>{paragraph}</ClassArticle>

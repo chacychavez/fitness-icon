@@ -1,0 +1,10 @@
+<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="3.5" y="5.5" width="19" height="17" rx="1.5" fill="#AFEAFF" stroke="black"/>
+<path d="M4 7C4 6.44772 4.44772 6 5 6H21C21.5523 6 22 6.44772 22 7V11H4V7Z" fill="#FF5D16"/>
+<line x1="3" y1="11.5" x2="22" y2="11.5" stroke="black"/>
+<rect x="6.8335" y="13.5" width="12.3333" height="5.66667" rx="0.5" fill="#AFEAFF" stroke="black"/>
+<rect x="7.81934" y="3.375" width="2.58333" height="5.91667" rx="1.29167" fill="white" stroke="black" stroke-width="0.75"/>
+<rect x="15.5967" y="3.375" width="2.58333" height="5.91667" rx="1.29167" fill="white" stroke="black" stroke-width="0.75"/>
+<line x1="10.5" y1="14" x2="10.5" y2="19" stroke="black"/>
+<line x1="15.5" y1="14" x2="15.5" y2="19" stroke="black"/>
+</svg>

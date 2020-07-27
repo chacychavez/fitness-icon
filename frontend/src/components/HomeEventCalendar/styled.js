@@ -54,7 +54,7 @@ export const EventCalendarLocation = styled.input`
   width: 214px;
   background-image: ${(props) => `url(${props.icon})`};
   background-repeat: no-repeat;
-  background-size: 16px;
+  background-size: 22px;
   background-position-y: center;
   background-position-x: 184px;
 

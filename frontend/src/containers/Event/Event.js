@@ -1,5 +1,11 @@
 import React from 'react';
 
+import dateIcon from '../../assets/images/date-event.svg';
+import locationIcon from '../../assets/images/map-pin.svg';
+import organizerIcon from '../../assets/images/organizer.svg';
+import participantsIcon from '../../assets/images/participants.svg';
+import weatherIcon from '../../assets/images/weather.svg';
+import webIcon from '../../assets/images/web.svg';
 import ChallengeShareLinks from '../../components/ChallengeShareLinks';
 import EventDetails from '../../components/EventDetails';
 import {
@@ -8,6 +14,7 @@ import {
   EventContainer,
   EventHeader,
   EventAdContainer,
+  EventIcon,
   EventDateLocationWebsiteContainer,
   EventDate,
   EventLocation,
@@ -196,15 +203,31 @@ const Event = () => {
         <EventContainer>
           <EventHeader>PSE Bull Run 2020</EventHeader>
           <EventDateLocationWebsiteContainer>
-            <EventDate>May 24, 2020</EventDate>
-            <EventLocation>Mckinely West, Taguig City</EventLocation>
-            <EventWebsite>www.psebullrun.ph</EventWebsite>
+            <EventDate>
+              <EventIcon src={dateIcon} />
+              May 24, 2020
+            </EventDate>
+            <EventLocation>
+              <EventIcon src={locationIcon} />
+              Mckinely West, Taguig City
+            </EventLocation>
+            <EventWebsite>
+              <EventIcon src={webIcon} />
+              www.psebullrun.ph
+            </EventWebsite>
           </EventDateLocationWebsiteContainer>
           <EventWeatherParticipantsContainer>
-            <EventWeather>Partly cloudy throughout the day</EventWeather>
-            <EventParticipants>13,000 participants</EventParticipants>
+            <EventWeather>
+              <EventIcon src={weatherIcon} />
+              Partly cloudy throughout the day
+            </EventWeather>
+            <EventParticipants>
+              <EventIcon src={participantsIcon} />
+              13,000 participants
+            </EventParticipants>
           </EventWeatherParticipantsContainer>
           <EventOrganizer>
+            <EventIcon src={organizerIcon} />
             Organized by <span>Runrio Events Inc.</span>
           </EventOrganizer>
           {content.split('\n').map((paragraph) => (

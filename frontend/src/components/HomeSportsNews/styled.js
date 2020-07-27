@@ -55,7 +55,7 @@ export const SportsArticlesContainer = styled.div`
 `;
 
 export const SportsArticles = styled.div`
-  width: 75vw;
+  width: 75%;
 `;
 
 export const SportsArticle = styled.div`
@@ -127,7 +127,7 @@ export const SportsArticleContent = styled.article`
 `;
 
 export const SportsAdContainer = styled.div`
-  width: 25vw;
+  width: 25%;
 `;
 
 export const SportsAdImage = styled.img``;

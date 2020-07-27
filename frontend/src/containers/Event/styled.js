@@ -35,6 +35,10 @@ export const EventHeader = styled.header`
   font-size: 36px;
 `;
 
+export const EventIcon = styled.img`
+  margin-right: 4px;
+`;
+
 export const EventDateLocationWebsiteContainer = styled.div`
   display: flex;
   font-weight: 600;
@@ -43,16 +47,22 @@ export const EventDateLocationWebsiteContainer = styled.div`
 `;
 
 export const EventDate = styled.div`
-  margin-right: 50px;
+  margin-right: 26px;
+  display: flex;
+  align-items: center;
 `;
 
 export const EventLocation = styled.div`
-  margin-right: 50px;
+  margin-right: 26px;
   text-decoration-line: underline;
+  display: flex;
+  align-items: center;
 `;
 
 export const EventWebsite = styled.div`
   text-decoration-line: underline;
+  display: flex;
+  align-items: center;
 `;
 
 export const EventWeatherParticipantsContainer = styled.div`
@@ -65,14 +75,21 @@ export const EventWeatherParticipantsContainer = styled.div`
 export const EventWeather = styled.div`
   text-decoration-line: underline;
   margin-right: 50px;
+  display: flex;
+  align-items: center;
 `;
 
-export const EventParticipants = styled.div``;
+export const EventParticipants = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 export const EventOrganizer = styled.div`
   font-weight: 600;
   font-size: 16px;
   margin: 30px 0;
+  display: flex;
+  align-items: center;
 
   span {
     text-decoration-line: underline;

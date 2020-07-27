@@ -35,6 +35,10 @@ export const ClassHeader = styled.header`
   font-size: 36px;
 `;
 
+export const ClassIcon = styled.img`
+  margin-right: 4px;
+`;
+
 export const ClassScheduleLocationContainer = styled.div`
   display: flex;
   font-weight: 600;
@@ -44,11 +48,15 @@ export const ClassScheduleLocationContainer = styled.div`
 
 export const ClassSchedule = styled.div`
   margin-right: 50px;
+  display: flex;
+  align-items: center;
 `;
 
 export const ClassLocation = styled.div`
   margin-right: 50px;
   text-decoration-line: underline;
+  display: flex;
+  align-items: center;
 `;
 
 export const ClassOrganizerParticipantsContainer = styled.div`
@@ -62,26 +70,47 @@ export const ClassOrganizerParticipantsContainer = styled.div`
 export const ClassOrganizer = styled.div`
   font-weight: 600;
   font-size: 16px;
+  display: flex;
+  align-items: center;
 
   span {
     text-decoration-line: underline;
   }
 `;
 
-export const ClassCoach = styled.div``;
+export const ClassCoach = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-export const ClassParticipants = styled.div``;
+export const ClassParticipants = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 export const ClassOrganizerContact = styled.div`
   display: flex;
   justify-content: space-between;
+  font-weight: 600;
+  font-size: 16px;
 `;
 
-export const OrganizerContactNumber = styled.div``;
+export const OrganizerContactNumber = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-export const OrganizerInstagram = styled.div``;
+export const OrganizerInstagram = styled.div`
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
+`;
 
-export const OrganizerFacebook = styled.div``;
+export const OrganizerFacebook = styled.div`
+  display: flex;
+  align-items: center;
+  text-decoration-line: underline;
+`;
 
 export const ClassArticle = styled.div`
   font-weight: 500;
