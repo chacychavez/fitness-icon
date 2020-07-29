@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
+import PropTypes from 'prop-types';
+
+import dropdownIcon from '../../assets/images/dropdown.svg';
 import radioActive from '../../assets/images/radio-active.svg';
 import radio from '../../assets/images/radio.svg';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 import {
   GettingStartedContainer,
   GettingStartedDescription,
@@ -12,10 +16,20 @@ import {
   Option,
   OptionHeader,
   OptionDescription,
+  DropdownContainer,
+  DropdownValue,
+  DropdownOptions,
+  DropdownOption,
 } from './styled';
+
+const sportsDiscipline = [
+  { id: 'yoga', text: 'Yoga' },
+  { id: 'basketball', text: 'Basketball' },
+];
 
 const GettingStarted = () => {
   const [eventType, setEventType] = useState('sports-event');
+  const [sportDiscipline, setSportDiscipline] = useState(sportsDiscipline[0]);
 
   const eventTypes = [
     {
@@ -72,17 +86,70 @@ const GettingStarted = () => {
           <QuestionHeader>
             2. What sport or discpline does your event feature?
           </QuestionHeader>
-          <select name="sport-discipline" id="sport-discipline">
-            <option value="yoga">Yoga</option>
-            <option value="boxing">Boxing</option>
-            <option value="running">Running</option>
-            <option value="climbing">Climbing</option>
-          </select>
+          <Dropdown
+            options={sportsDiscipline}
+            value={sportDiscipline}
+            onSelect={setSportDiscipline}
+          />
         </GettingStartedQuestion>
         <GettingStartedQuestion />
       </GettingStartedQuestions>
     </GettingStartedContainer>
   );
+};
+
+const Dropdown = ({ options, onSelect, value }) => {
+  const [open, setOpen] = useState(false);
+  const dropdownRef = useRef();
+  const toggle = (option) => {
+    onSelect(option);
+    setOpen(false);
+  };
+
+  useOnClickOutside(dropdownRef, () => {
+    setOpen(false);
+  });
+
+  return (
+    <DropdownContainer ref={dropdownRef}>
+      <DropdownValue
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
+        {value.text}
+        <img src={dropdownIcon} width={20} height={20} alt="Dropdown" />
+      </DropdownValue>
+      {open && (
+        <DropdownOptions>
+          {options.map((option) => (
+            <DropdownOption
+              onClick={() => {
+                toggle(option);
+              }}
+              key={option.id}
+            >
+              {option.text}
+            </DropdownOption>
+          ))}
+        </DropdownOptions>
+      )}
+    </DropdownContainer>
+  );
+};
+
+Dropdown.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      text: PropTypes.string,
+    }),
+  ).isRequired,
+  value: PropTypes.shape({
+    id: PropTypes.string,
+    text: PropTypes.string,
+  }).isRequired,
 };
 
 export default GettingStarted;

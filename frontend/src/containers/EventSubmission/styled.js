@@ -60,7 +60,7 @@ export const EventSubmissionTab = styled.li`
 
 export const EventSubmissionNavigations = styled.div`
   display: flex;
-  margin-top: 34px;
+  margin-top: 64px;
 `;
 
 export const NavigationButton = styled.a`

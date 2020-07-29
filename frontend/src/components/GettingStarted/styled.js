@@ -52,3 +52,35 @@ export const OptionDescription = styled.div`
   padding-left: 38px;
   color: #444545;
 `;
+
+export const DropdownContainer = styled.div`
+  margin-top: 20px;
+`;
+
+export const DropdownValue = styled.span`
+  width: 232px;
+  display: flex;
+  padding: 12px;
+  border: 1px solid #94a2a8;
+  border-radius: 3px;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+`;
+
+export const DropdownOptions = styled.ul`
+  display: inline-block;
+  margin: -1px 0 0 0;
+  padding: 0;
+  border: 1px solid #94a2a8;
+  border-radius: 3px;
+  position: absolute;
+  z-index: 99;
+  background: #fff;
+`;
+
+export const DropdownOption = styled.li`
+  width: 232px;
+  list-style: none;
+  padding: 12px;
+`;
