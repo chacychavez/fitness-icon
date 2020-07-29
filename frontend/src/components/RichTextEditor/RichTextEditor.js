@@ -428,7 +428,7 @@ const BlockStyleControls = ({ editorState, onToggle }) => {
 };
 
 BlockStyleControls.propTypes = {
-  editorState: PropTypes.shape.isRequired,
+  editorState: PropTypes.object.isRequired,
   onToggle: PropTypes.func.isRequired,
 };
 
@@ -461,7 +461,7 @@ const InlineStyleControls = ({ editorState, onToggle }) => {
 };
 
 InlineStyleControls.propTypes = {
-  editorState: PropTypes.shape.isRequired,
+  editorState: PropTypes.object.isRequired,
   onToggle: PropTypes.func.isRequired,
 };
 

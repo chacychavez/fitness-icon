@@ -114,7 +114,7 @@ const EventSubmissionDetails = () => {
           <InputContainer label="Dates" id="dates" size="medium" />
         </InputGroup>
         <InputGroup>
-          <InputContainer label="Event website URL" id="website" size="large" />
+          <InputContainer label="Event website URL" id="event-website" size="large" />
           <InputContainer
             label="Target # of participants*"
             id="participants"
@@ -172,8 +172,8 @@ const EventSubmissionDetails = () => {
         {
           // TODO: Remove comment below then fix eslint error.
           // eslint-disable-next-line
-          categories.map((_) => (
-            <div>
+          categories.map((_, index) => (
+            <div key={index}>
               <InputGroup>
                 <InputContainer
                   label="Category name"
@@ -229,8 +229,8 @@ const EventSubmissionDetails = () => {
         {
           // TODO: Remove comment below then fix eslint error.
           // eslint-disable-next-line
-          inclusions.map((_) => (
-            <div>
+          inclusions.map((_, index) => (
+            <div key={index}>
               <InputContainer label="Item name" id="item-name" size="large" />
               <Container>
                 <div>
@@ -274,8 +274,8 @@ const EventSubmissionDetails = () => {
         {
           // TODO: Remove comment below then fix eslint error.
           // eslint-disable-next-line
-          additionalInfos.map((_) => (
-            <div>
+          additionalInfos.map((_, index) => (
+            <div key={index}>
               <InputGroup>
                 <InputContainer
                   label="Section heading"
@@ -304,8 +304,8 @@ const EventSubmissionDetails = () => {
         {
           // TODO: Remove comment below then fix eslint error.
           // eslint-disable-next-line
-          faqs.map((_) => (
-            <div>
+          faqs.map((_, index) => (
+            <div key={index}>
               <InputGroup>
                 <InputContainer label="Question" id="question" size="large" />
               </InputGroup>
