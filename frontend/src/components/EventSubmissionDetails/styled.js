@@ -9,7 +9,8 @@ export const EventDetailsDescription = styled.article`
   color: #6d7577;
   margin-top: 10px;
 
-  span {
+  small {
+    font-size: 14px;
     color: #000000;
 
     span {
@@ -34,12 +35,16 @@ const inputSizes = {
   large: '270px',
 };
 
+export const InputLabelSpan = styled.span`
+  font-weight: 600;
+  font-size: 16px;
+`;
+
 export const Container = styled.div`
   display: inline-block;
   margin: 12px 24px 12px 0;
 
-  label,
-  span {
+  label {
     font-weight: 600;
     font-size: 16px;
   }
@@ -69,7 +74,7 @@ export const Container = styled.div`
     margin-top: 10px;
     color: #6d7577;
 
-    span {
+    small {
       font-weight: 500;
       font-size: 14px;
       color: #000000;

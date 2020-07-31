@@ -9,6 +9,7 @@ import {
   EventDetailsDescription,
   EventDetailsHeader,
   InputGroup,
+  InputLabelSpan,
   Container,
   ChooseFileButton,
   Separator,
@@ -96,13 +97,13 @@ const EventSubmissionDetails = () => {
       <EventDetailsDescription>
         Feature your running event in all its glory by providing all the little
         details. Make sure to fill out fields that are marked as
-        <span>
+        <small>
           {' '}
           Required<span>*</span>
-        </span>
+        </small>
         . If you are not sure what to put, click on this
-        <span> sample photo</span> to view an example of an event with complete
-        info.
+        <small> sample photo</small> to view an example of an event with
+        complete info.
       </EventDetailsDescription>
       <GeneralDetailsContainer>
         <EventDetailsHeader>General details</EventDetailsHeader>
@@ -114,7 +115,11 @@ const EventSubmissionDetails = () => {
           <InputContainer label="Dates" id="dates" size="medium" />
         </InputGroup>
         <InputGroup>
-          <InputContainer label="Event website URL" id="event-website" size="large" />
+          <InputContainer
+            label="Event website URL"
+            id="event-website"
+            size="large"
+          />
           <InputContainer
             label="Target # of participants*"
             id="participants"
@@ -122,7 +127,7 @@ const EventSubmissionDetails = () => {
           />
         </InputGroup>
         <Container>
-          <span>Description*</span>
+          <InputLabelSpan>Description*</InputLabelSpan>
           <RichTextEditor placeholder="Provide a short description for your event..." />
         </Container>
       </GeneralDetailsContainer>
@@ -130,7 +135,7 @@ const EventSubmissionDetails = () => {
       <RegistrationDetailsContainer>
         <EventDetailsHeader>Registration</EventDetailsHeader>
         <Container>
-          <span>Registration details*</span>
+          <InputLabelSpan>Registration details*</InputLabelSpan>
           <RichTextEditor placeholder="Describe when, where, and how to register..." />
         </Container>
         <InputGroup>
@@ -145,20 +150,20 @@ const EventSubmissionDetails = () => {
       <DisplayImagesContainer>
         <EventDetailsHeader>Display images</EventDetailsHeader>
         <Container>
-          <span>Banner image*</span>
+          <InputLabelSpan>Banner image*</InputLabelSpan>
           <div>
             This is the hero image that goes on top of your event page.
-            Dimensions should be <span>2000 x 4000</span> and maximum file size
-            of <span>2MB</span>
+            Dimensions should be <small>2000 x 4000</small> and maximum file
+            size of <small>2MB</small>
           </div>
           <ChooseFileButton>Choose file</ChooseFileButton>
         </Container>
         <Container>
-          <span>Thumbnail image*</span>
+          <InputLabelSpan>Thumbnail image*</InputLabelSpan>
           <div>
             This will be your image for lists and search results. Dimensions
-            should be <span>800 x 400</span> with a maximum file size of{' '}
-            <span>1MB</span>
+            should be <small>800 x 400</small> with a maximum file size of{' '}
+            <small>1MB</small>
           </div>
           <ChooseFileButton>Choose file</ChooseFileButton>
         </Container>
@@ -204,10 +209,10 @@ const EventSubmissionDetails = () => {
                 />
               </InputGroup>
               <Container>
-                <span>Route map</span>
+                <InputLabelSpan>Route map</InputLabelSpan>
                 <div>
                   Upload a route map for this category. Maximum file size:{' '}
-                  <span>1 MB</span>
+                  <small>1 MB</small>
                 </div>
                 <ChooseFileButton>Choose file</ChooseFileButton>
               </Container>
@@ -284,7 +289,7 @@ const EventSubmissionDetails = () => {
                 />
               </InputGroup>
               <Container>
-                <span>Section text</span>
+                <InputLabelSpan>Section text</InputLabelSpan>
                 <RichTextEditor placeholder="Provide a description for the topic..." />
               </Container>
             </div>
@@ -310,7 +315,7 @@ const EventSubmissionDetails = () => {
                 <InputContainer label="Question" id="question" size="large" />
               </InputGroup>
               <Container>
-                <span>Answer</span>
+                <InputLabelSpan>Answer</InputLabelSpan>
                 <RichTextEditor placeholder="Provide a short description for your event..." />
               </Container>
             </div>

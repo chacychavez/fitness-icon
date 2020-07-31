@@ -4,9 +4,10 @@ const RichTextContainer = styled.div`
   background: #fff;
   border: 1px solid #ddd;
   font-family: 'Exo', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   padding: 15px;
   width: 490px;
+  color: #000;
 
   .RichEditor-editor {
     border-bottom: 1px solid #ddd;
@@ -19,6 +20,11 @@ const RichTextContainer = styled.div`
   .RichEditor-editor .public-DraftEditor-content {
     margin: 0 -15px -15px;
     padding: 15px;
+
+    div {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 
   .RichEditor-editor .public-DraftEditor-content {
@@ -43,6 +49,10 @@ const RichTextContainer = styled.div`
     font-family: 'Inconsolata', 'Menlo', 'Consolas', monospace;
     font-size: 16px;
     padding: 20px;
+  }
+
+  .RichEditor-editor .public-DraftStyleDefault-ltr {
+    color: #000;
   }
 
   .RichEditor-controls {
