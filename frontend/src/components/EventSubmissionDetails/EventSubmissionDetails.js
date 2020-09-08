@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import PropTypes from 'prop-types';
 
 import addField from '../../assets/images/add-field.svg';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
+import CustomGoogleMap from '../CustomGoogleMap';
 import RichTextEditor from '../RichTextEditor';
 import {
   EventDetailsContainer,
@@ -24,10 +26,10 @@ import {
   AddItem,
 } from './styled';
 
-const InputContainer = ({ label, id, size }) => (
+const InputContainer = ({ label, id, size, onFocus, onBlur }) => (
   <Container size={size}>
     <label htmlFor={id}>{label}</label>
-    <input type="text" id={id} />
+    <input type="text" id={id} onFocus={onFocus} onBlur={onBlur} />
   </Container>
 );
 
@@ -35,12 +37,16 @@ InputContainer.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   size: PropTypes.string,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
 };
 
 InputContainer.defaultProps = {
   id: '',
   label: '',
   size: 'large',
+  onFocus: null,
+  onBlur: null,
 };
 
 const category = {
@@ -67,11 +73,17 @@ const faq = {
   answer: '',
 };
 
-const EventSubmissionDetails = () => {
+const EventSubmissionDetails = ({ google }) => {
   const [categories, setCategories] = useState([category]);
   const [inclusions, setInclusions] = useState([inclusion]);
   const [additionalInfos, setAdditionalInfos] = useState([additionalInfo]);
   const [faqs, setFaqs] = useState([faq]);
+  const [visibleMap, setVisibleMap] = useState(false);
+  const ref = useRef();
+
+  useOnClickOutside(ref, () => {
+    if (!visibleMap) setVisibleMap(false);
+  });
 
   const addCategory = () => {
     setCategories((_categories) => [..._categories, category]);
@@ -90,6 +102,19 @@ const EventSubmissionDetails = () => {
 
   const addFaq = () => {
     setFaqs((_faqs) => [..._faqs, faq]);
+  };
+
+  const onConfirm = (state) => {
+    console.log(state);
+    setVisibleMap(false);
+  };
+
+  const onCancel = () => {
+    setVisibleMap(false);
+  };
+
+  const onVenueFocus = () => {
+    setVisibleMap(true);
   };
 
   return (
@@ -111,9 +136,25 @@ const EventSubmissionDetails = () => {
           <InputContainer label="Event name" id="event-name" size="large" />
         </InputGroup>
         <InputGroup>
-          <InputContainer label="Venue" id="venue" size="large" />
+          <InputContainer
+            label="Venue"
+            id="venue"
+            size="large"
+            onFocus={onVenueFocus}
+          />
           <InputContainer label="Dates" id="dates" size="medium" />
         </InputGroup>
+        {visibleMap && (
+          <CustomGoogleMap
+            google={google}
+            center={{ lat: 14.5813, lng: 120.9762 }}
+            height={300}
+            width={550}
+            zoom={15}
+            onConfirm={onConfirm}
+            onCancel={onCancel}
+          />
+        )}
         <InputGroup>
           <InputContainer
             label="Event website URL"
@@ -329,6 +370,14 @@ const EventSubmissionDetails = () => {
       <Separator />
     </EventDetailsContainer>
   );
+};
+
+EventSubmissionDetails.propTypes = {
+  google: PropTypes.shape({}),
+};
+
+EventSubmissionDetails.defaultProps = {
+  google: null,
 };
 
 export default EventSubmissionDetails;
