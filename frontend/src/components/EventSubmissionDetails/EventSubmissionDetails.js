@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 
 import PropTypes from 'prop-types';
+import { useForm } from 'react-hook-form';
 
 import addField from '../../assets/images/add-field.svg';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
@@ -13,6 +14,8 @@ import {
   InputGroup,
   InputLabelSpan,
   Container,
+  Input,
+  InputError,
   ChooseFileButton,
   Separator,
   GeneralDetailsContainer,
@@ -26,10 +29,36 @@ import {
   AddItem,
 } from './styled';
 
-const InputContainer = ({ label, id, size, onFocus, onBlur }) => (
-  <Container size={size}>
-    <label htmlFor={id}>{label}</label>
-    <input type="text" id={id} onFocus={onFocus} onBlur={onBlur} />
+const InputContainer = ({
+  name,
+  label,
+  size,
+  required,
+  onFocus,
+  register,
+  error,
+  errorMessage,
+  readOnly,
+  type = 'text',
+}) => (
+  <Container>
+    <label htmlFor={name}>
+      {label}
+      {required && <span>*</span>}
+    </label>
+    <Input
+      size={size}
+      name={name}
+      type="text"
+      id={name}
+      onFocus={onFocus}
+      ref={register}
+      error={error}
+      readOnly={readOnly}
+      type={type}
+      required={required}
+    />
+    {error && <InputError>{errorMessage}</InputError>}
   </Container>
 );
 
@@ -38,7 +67,7 @@ InputContainer.propTypes = {
   label: PropTypes.string,
   size: PropTypes.string,
   onFocus: PropTypes.func,
-  onBlur: PropTypes.func,
+  readOnly: PropTypes.bool,
 };
 
 InputContainer.defaultProps = {
@@ -46,7 +75,7 @@ InputContainer.defaultProps = {
   label: '',
   size: 'large',
   onFocus: null,
-  onBlur: null,
+  readOnly: false,
 };
 
 const category = {
@@ -80,6 +109,12 @@ const EventSubmissionDetails = ({ google }) => {
   const [faqs, setFaqs] = useState([faq]);
   const [visibleMap, setVisibleMap] = useState(false);
   const ref = useRef();
+
+  const { register, handleSubmit, errors } = useForm(); // initialize the hook
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   useOnClickOutside(ref, () => {
     if (!visibleMap) setVisibleMap(false);
@@ -133,16 +168,42 @@ const EventSubmissionDetails = ({ google }) => {
       <GeneralDetailsContainer>
         <EventDetailsHeader>General details</EventDetailsHeader>
         <InputGroup>
-          <InputContainer label="Event name" id="event-name" size="large" />
+          <InputContainer
+            name="eventName"
+            label="Event name"
+            size="large"
+            required
+            register={register({ required: true })}
+            error={errors.eventName}
+            errorMessage="Event name is required."
+          />
         </InputGroup>
         <InputGroup>
+          {
+            // Use Controller for controlled input like this
+          }
           <InputContainer
+            name="venue"
             label="Venue"
             id="venue"
             size="large"
             onFocus={onVenueFocus}
+            required
+            register={register({ required: true })}
+            error={errors.venue}
+            errorMessage="Venue is required."
+            readOnly
           />
-          <InputContainer label="Dates" id="dates" size="medium" />
+          <InputContainer
+            name="eventDates"
+            label="Dates"
+            id="dates"
+            size="medium"
+            required
+            register={register({ required: true })}
+            error={errors.eventDates}
+            errorMessage="Dates is required."
+          />
         </InputGroup>
         {visibleMap && (
           <CustomGoogleMap
@@ -157,21 +218,40 @@ const EventSubmissionDetails = ({ google }) => {
         )}
         <InputGroup>
           <InputContainer
+            name="eventWdisabledebsite"
             label="Event website URL"
             id="event-website"
             size="large"
+            register={register}
+            error={errors.eventWebsite}
           />
           <InputContainer
-            label="Target # of participants*"
+            name="eventNumOfParticipants"
+            label="Target # of participants"
             id="participants"
             size="medium"
+            required
+            register={register({ required: true })}
+            error={errors.eventNumOfParticipants}
+            errorMessage="Target # of participants is required."
           />
         </InputGroup>
         <Container>
-          <InputLabelSpan>Description*</InputLabelSpan>
+          <InputLabelSpan>
+            Description<span>*</span>
+          </InputLabelSpan>
           <RichTextEditor placeholder="Provide a short description for your event..." />
         </Container>
       </GeneralDetailsContainer>
+      <button
+        onClick={() => {
+          console.log('DONE');
+          // Use this to have submitted flag for input border color
+          handleSubmit(onSubmit)();
+        }}
+      >
+        Submit
+      </button>
       <Separator />
       <RegistrationDetailsContainer>
         <EventDetailsHeader>Registration</EventDetailsHeader>
@@ -222,31 +302,60 @@ const EventSubmissionDetails = ({ google }) => {
             <div key={index}>
               <InputGroup>
                 <InputContainer
+                  name="categoryName"
                   label="Category name"
                   id="category-name"
                   size="large"
+                  required
+                  register={register({ required: true })}
+                  error={errors.categoryName}
+                  errorMessage="Category name is required"
                 />
                 <InputContainer
+                  name="regPrice"
                   label="Reg. price"
                   id="reg-price"
                   size="small"
+                  required
+                  register={register({ required: true })}
+                  error={errors.regPrice}
+                  errorMessage="Registration price is required"
+                  type="number"
                 />
               </InputGroup>
               <InputGroup>
                 <InputContainer
-                  label="Assembly time*"
+                  name="assemblyTime"
+                  label="Assembly time"
                   id="assembly-time"
                   size="medium"
+                  required
+                  register={register({ required: true })}
+                  error={errors.assemblyTime}
+                  errorMessage="Assembly time is required"
+                  type="time"
                 />
                 <InputContainer
-                  label="Gun Start*"
+                  name="gunStart"
+                  label="Gun Start"
                   id="gun-start"
                   size="medium"
+                  required
+                  register={register({ required: true })}
+                  error={errors.gunStart}
+                  errorMessage="Gun start is required"
+                  type="time"
                 />
                 <InputContainer
-                  label="Cut-Off time*"
+                  name="cutOffTime"
+                  label="Cut-Off time"
                   id="cut-off-time"
                   size="medium"
+                  required
+                  register={register({ required: true })}
+                  error={errors.cutOffTime}
+                  errorMessage="Cut-Off time is required"
+                  type="time"
                 />
               </InputGroup>
               <Container>
@@ -298,9 +407,14 @@ const EventSubmissionDetails = ({ google }) => {
         <EventDetailsHeader>Event organizer</EventDetailsHeader>
         <InputGroup>
           <InputContainer
-            label="Name/Company name*"
+            name="eventOrganizerName"
+            label="Name/Company name"
             id="name-company"
             size="large"
+            required
+            register={register({ required: true })}
+            error={errors.eventOrganizerName}
+            errorMessage="Name/Company name is required."
           />
         </InputGroup>
         <InputGroup>

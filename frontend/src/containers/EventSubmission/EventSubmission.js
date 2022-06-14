@@ -14,7 +14,7 @@ import {
 } from './styled';
 
 const EventSubmission = () => {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
   const pages = ['Getting started', 'Event details', 'Review & submit'];
 
   const renderPage = () => {
